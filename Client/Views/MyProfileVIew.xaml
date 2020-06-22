@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="Client.Views.MyProfileVIew"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Client.Views"
+             xmlns:data ="clr-namespace:Client.Model"
+             xmlns:viewmodel ="clr-namespace:Client.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <StackPanel>
+            <Label Content="Moj profil" Foreground="White" FontSize="20" HorizontalAlignment="Center" />
+            <Separator  Height="5"/>
+            <Label Content="Korisnicko ime" Foreground="White" Margin="276,0,276,0" />
+            <TextBox Text="{Binding Username, Mode=OneWay}" IsReadOnly="True" Background="#545d6a" Margin="276,0,276,0" Foreground="White" FontSize="18" />
+            <Label Content="Nova Lozinka" Foreground="White"  Margin="276,0,276,0"/>
+            <PasswordBox x:Name="PassBox"  Background="#545d6a" Margin="276,0,276,0" Foreground="White" FontSize="18"></PasswordBox>
+            <Button Content="Promeni lozinku" Style="{StaticResource RoundButton}" Margin="280,30,276,0" Cursor="Hand"  Command="{Binding ChangeCommand}" CommandParameter="{Binding ElementName=PassBox}" IsEnabled="{Binding CanChange}" HorizontalAlignment="Left" Height="34"  VerticalAlignment="Top" Width="142"/>
+        </StackPanel>
+
+        
+    </Grid>
+</UserControl>

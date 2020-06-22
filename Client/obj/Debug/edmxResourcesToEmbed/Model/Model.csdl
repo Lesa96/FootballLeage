@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LigaDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Igrac">
+    <Key>
+      <PropertyRef Name="id_igraca" />
+    </Key>
+    <Property Name="id_igraca" Type="Int32" Nullable="false" />
+    <Property Name="ime_igraca" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="prezime_igraca" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="vodi_id_trenera" Type="Int32" Nullable="false" />
+    <Property Name="vodi_naziv" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="naziv_kluba" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Klub" Relationship="Self.igrac_klub_fk" FromRole="Igrac" ToRole="Klub" />
+    <NavigationProperty Name="Vodi" Relationship="Self.igrac_vodi_fk" FromRole="Igrac" ToRole="Vodi" />
+    <NavigationProperty Name="Menadzers" Relationship="Self.Ima" FromRole="Igrac" ToRole="Menadzer" />
+  </EntityType>
+  <EntityType Name="Klub">
+    <Key>
+      <PropertyRef Name="naziv" />
+    </Key>
+    <Property Name="naziv" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="grad" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="liga_id_lige" Type="Int32" />
+    <NavigationProperty Name="Igracs" Relationship="Self.igrac_klub_fk" FromRole="Klub" ToRole="Igrac" />
+    <NavigationProperty Name="Liga" Relationship="Self.klub_liga_fk" FromRole="Klub" ToRole="Liga" />
+    <NavigationProperty Name="Posedujes" Relationship="Self.poseduje_klub_fk" FromRole="Klub" ToRole="Poseduje" />
+    <NavigationProperty Name="Vodis" Relationship="Self.vodi_klub_fk" FromRole="Klub" ToRole="Vodi" />
+    <NavigationProperty Name="Vlasniks" Relationship="Self.Pripada" FromRole="Klub" ToRole="Vlasnik" />
+  </EntityType>
+  <EntityType Name="Liga">
+    <Key>
+      <PropertyRef Name="id_lige" />
+    </Key>
+    <Property Name="id_lige" Type="Int32" Nullable="false" />
+    <Property Name="naziv_lige" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="drzava_lige" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Klubs" Relationship="Self.klub_liga_fk" FromRole="Liga" ToRole="Klub" />
+    <NavigationProperty Name="Sudijas" Relationship="Self.sudija_liga_fk" FromRole="Liga" ToRole="Sudija" />
+    <NavigationProperty Name="Sponzors" Relationship="Self.Sponzorise" FromRole="Liga" ToRole="Sponzor" />
+  </EntityType>
+  <EntityType Name="Menadzer">
+    <Key>
+      <PropertyRef Name="id_menagera" />
+    </Key>
+    <Property Name="ime_menagera" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="prezime_menagera" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="id_menagera" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Igracs" Relationship="Self.Ima" FromRole="Menadzer" ToRole="Igrac" />
+  </EntityType>
+  <EntityType Name="Obezbedjenje">
+    <Key>
+      <PropertyRef Name="id_radnika" />
+    </Key>
+    <Property Name="ime_radnika" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="prezime_radnika" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="id_radnika" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Posedujes" Relationship="Self.Zaposljava" FromRole="Obezbedjenje" ToRole="Poseduje" />
+  </EntityType>
+  <EntityType Name="Poseduje">
+    <Key>
+      <PropertyRef Name="klub_naziv" />
+      <PropertyRef Name="stadion_id_stadiona" />
+    </Key>
+    <Property Name="klub_naziv" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="stadion_id_stadiona" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Klub" Relationship="Self.poseduje_klub_fk" FromRole="Poseduje" ToRole="Klub" />
+    <NavigationProperty Name="Stadion" Relationship="Self.poseduje_stadion_fk" FromRole="Poseduje" ToRole="Stadion" />
+    <NavigationProperty Name="Obezbedjenjes" Relationship="Self.Zaposljava" FromRole="Poseduje" ToRole="Obezbedjenje" />
+  </EntityType>
+  <EntityType Name="Sponzor">
+    <Key>
+      <PropertyRef Name="id_sponzora" />
+    </Key>
+    <Property Name="id_sponzora" Type="Int32" Nullable="false" />
+    <Property Name="naziv" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Ligas" Relationship="Self.Sponzorise" FromRole="Sponzor" ToRole="Liga" />
+  </EntityType>
+  <EntityType Name="Stadion">
+    <Key>
+      <PropertyRef Name="id_stadiona" />
+    </Key>
+    <Property Name="naziv_stadiona" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="id_stadiona" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Posedujes" Relationship="Self.poseduje_stadion_fk" FromRole="Stadion" ToRole="Poseduje" />
+  </EntityType>
+  <EntityType Name="Sudija">
+    <Key>
+      <PropertyRef Name="id_sudije" />
+    </Key>
+    <Property Name="ime_sudije" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="prezime_sudije" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="id_sudije" Type="Int32" Nullable="false" />
+    <Property Name="nacionalnost_sudije" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="liga_id_lige" Type="Int32" />
+    <NavigationProperty Name="Liga" Relationship="Self.sudija_liga_fk" FromRole="Sudija" ToRole="Liga" />
+  </EntityType>
+  <EntityType Name="Trener">
+    <Key>
+      <PropertyRef Name="id_trenera" />
+    </Key>
+    <Property Name="ime_trenera" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="prezime_trenera" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="id_trenera" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Vodis" Relationship="Self.vodi_trener_fk" FromRole="Trener" ToRole="Vodi" />
+  </EntityType>
+  <EntityType Name="Vlasnik">
+    <Key>
+      <PropertyRef Name="id_vlasnika" />
+    </Key>
+    <Property Name="ime_vlasnika" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="prezime_vlasnika" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="id_vlasnika" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Klubs" Relationship="Self.Pripada" FromRole="Vlasnik" ToRole="Klub" />
+  </EntityType>
+  <EntityType Name="Vodi">
+    <Key>
+      <PropertyRef Name="trener_id_trenera" />
+      <PropertyRef Name="klub_naziv" />
+    </Key>
+    <Property Name="trener_id_trenera" Type="Int32" Nullable="false" />
+    <Property Name="klub_naziv" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Igracs" Relationship="Self.igrac_vodi_fk" FromRole="Vodi" ToRole="Igrac" />
+    <NavigationProperty Name="Klub" Relationship="Self.vodi_klub_fk" FromRole="Vodi" ToRole="Klub" />
+    <NavigationProperty Name="Trener" Relationship="Self.vodi_trener_fk" FromRole="Vodi" ToRole="Trener" />
+  </EntityType>
+  <Association Name="igrac_klub_fk">
+    <End Role="Klub" Type="Self.Klub" Multiplicity="0..1" />
+    <End Role="Igrac" Type="Self.Igrac" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Klub">
+        <PropertyRef Name="naziv" />
+      </Principal>
+      <Dependent Role="Igrac">
+        <PropertyRef Name="naziv_kluba" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="igrac_vodi_fk">
+    <End Role="Vodi" Type="Self.Vodi" Multiplicity="1" />
+    <End Role="Igrac" Type="Self.Igrac" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vodi">
+        <PropertyRef Name="trener_id_trenera" />
+        <PropertyRef Name="klub_naziv" />
+      </Principal>
+      <Dependent Role="Igrac">
+        <PropertyRef Name="vodi_id_trenera" />
+        <PropertyRef Name="vodi_naziv" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="klub_liga_fk">
+    <End Role="Liga" Type="Self.Liga" Multiplicity="0..1" />
+    <End Role="Klub" Type="Self.Klub" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Liga">
+        <PropertyRef Name="id_lige" />
+      </Principal>
+      <Dependent Role="Klub">
+        <PropertyRef Name="liga_id_lige" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="poseduje_klub_fk">
+    <End Role="Klub" Type="Self.Klub" Multiplicity="1" />
+    <End Role="Poseduje" Type="Self.Poseduje" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Klub">
+        <PropertyRef Name="naziv" />
+      </Principal>
+      <Dependent Role="Poseduje">
+        <PropertyRef Name="klub_naziv" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="vodi_klub_fk">
+    <End Role="Klub" Type="Self.Klub" Multiplicity="1" />
+    <End Role="Vodi" Type="Self.Vodi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Klub">
+        <PropertyRef Name="naziv" />
+      </Principal>
+      <Dependent Role="Vodi">
+        <PropertyRef Name="klub_naziv" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="sudija_liga_fk">
+    <End Role="Liga" Type="Self.Liga" Multiplicity="0..1" />
+    <End Role="Sudija" Type="Self.Sudija" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Liga">
+        <PropertyRef Name="id_lige" />
+      </Principal>
+      <Dependent Role="Sudija">
+        <PropertyRef Name="liga_id_lige" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="poseduje_stadion_fk">
+    <End Role="Stadion" Type="Self.Stadion" Multiplicity="1" />
+    <End Role="Poseduje" Type="Self.Poseduje" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stadion">
+        <PropertyRef Name="id_stadiona" />
+      </Principal>
+      <Dependent Role="Poseduje">
+        <PropertyRef Name="stadion_id_stadiona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="vodi_trener_fk">
+    <End Role="Trener" Type="Self.Trener" Multiplicity="1" />
+    <End Role="Vodi" Type="Self.Vodi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Trener">
+        <PropertyRef Name="id_trenera" />
+      </Principal>
+      <Dependent Role="Vodi">
+        <PropertyRef Name="trener_id_trenera" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Ima">
+    <End Role="Igrac" Type="Self.Igrac" Multiplicity="*" />
+    <End Role="Menadzer" Type="Self.Menadzer" Multiplicity="*" />
+  </Association>
+  <Association Name="Pripada">
+    <End Role="Klub" Type="Self.Klub" Multiplicity="*" />
+    <End Role="Vlasnik" Type="Self.Vlasnik" Multiplicity="*" />
+  </Association>
+  <Association Name="Sponzorise">
+    <End Role="Liga" Type="Self.Liga" Multiplicity="*" />
+    <End Role="Sponzor" Type="Self.Sponzor" Multiplicity="*" />
+  </Association>
+  <Association Name="Zaposljava">
+    <End Role="Obezbedjenje" Type="Self.Obezbedjenje" Multiplicity="*" />
+    <End Role="Poseduje" Type="Self.Poseduje" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="LigaDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Igracs" EntityType="Self.Igrac" />
+    <EntitySet Name="Klubs" EntityType="Self.Klub" />
+    <EntitySet Name="Ligas" EntityType="Self.Liga" />
+    <EntitySet Name="Menadzers" EntityType="Self.Menadzer" />
+    <EntitySet Name="Obezbedjenjes" EntityType="Self.Obezbedjenje" />
+    <EntitySet Name="Posedujes" EntityType="Self.Poseduje" />
+    <EntitySet Name="Sponzors" EntityType="Self.Sponzor" />
+    <EntitySet Name="Stadions" EntityType="Self.Stadion" />
+    <EntitySet Name="Sudijas" EntityType="Self.Sudija" />
+    <EntitySet Name="Treners" EntityType="Self.Trener" />
+    <EntitySet Name="Vlasniks" EntityType="Self.Vlasnik" />
+    <EntitySet Name="Vodis" EntityType="Self.Vodi" />
+    <AssociationSet Name="igrac_klub_fk" Association="Self.igrac_klub_fk">
+      <End Role="Klub" EntitySet="Klubs" />
+      <End Role="Igrac" EntitySet="Igracs" />
+    </AssociationSet>
+    <AssociationSet Name="igrac_vodi_fk" Association="Self.igrac_vodi_fk">
+      <End Role="Vodi" EntitySet="Vodis" />
+      <End Role="Igrac" EntitySet="Igracs" />
+    </AssociationSet>
+    <AssociationSet Name="klub_liga_fk" Association="Self.klub_liga_fk">
+      <End Role="Liga" EntitySet="Ligas" />
+      <End Role="Klub" EntitySet="Klubs" />
+    </AssociationSet>
+    <AssociationSet Name="poseduje_klub_fk" Association="Self.poseduje_klub_fk">
+      <End Role="Klub" EntitySet="Klubs" />
+      <End Role="Poseduje" EntitySet="Posedujes" />
+    </AssociationSet>
+    <AssociationSet Name="vodi_klub_fk" Association="Self.vodi_klub_fk">
+      <End Role="Klub" EntitySet="Klubs" />
+      <End Role="Vodi" EntitySet="Vodis" />
+    </AssociationSet>
+    <AssociationSet Name="sudija_liga_fk" Association="Self.sudija_liga_fk">
+      <End Role="Liga" EntitySet="Ligas" />
+      <End Role="Sudija" EntitySet="Sudijas" />
+    </AssociationSet>
+    <AssociationSet Name="poseduje_stadion_fk" Association="Self.poseduje_stadion_fk">
+      <End Role="Stadion" EntitySet="Stadions" />
+      <End Role="Poseduje" EntitySet="Posedujes" />
+    </AssociationSet>
+    <AssociationSet Name="vodi_trener_fk" Association="Self.vodi_trener_fk">
+      <End Role="Trener" EntitySet="Treners" />
+      <End Role="Vodi" EntitySet="Vodis" />
+    </AssociationSet>
+    <AssociationSet Name="Ima" Association="Self.Ima">
+      <End Role="Igrac" EntitySet="Igracs" />
+      <End Role="Menadzer" EntitySet="Menadzers" />
+    </AssociationSet>
+    <AssociationSet Name="Pripada" Association="Self.Pripada">
+      <End Role="Klub" EntitySet="Klubs" />
+      <End Role="Vlasnik" EntitySet="Vlasniks" />
+    </AssociationSet>
+    <AssociationSet Name="Sponzorise" Association="Self.Sponzorise">
+      <End Role="Liga" EntitySet="Ligas" />
+      <End Role="Sponzor" EntitySet="Sponzors" />
+    </AssociationSet>
+    <AssociationSet Name="Zaposljava" Association="Self.Zaposljava">
+      <End Role="Obezbedjenje" EntitySet="Obezbedjenjes" />
+      <End Role="Poseduje" EntitySet="Posedujes" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

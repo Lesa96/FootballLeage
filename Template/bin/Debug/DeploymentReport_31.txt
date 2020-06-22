@@ -1,0 +1,21 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The column [dbo].[Igrac].[transferi] is being dropped, data loss could occur.
+
+** User actions
+     Alter
+       [dbo].[Igrac] (Table)
+     Create
+       [dbo].[transferistorija] (Table)
+       [dbo].[transferistorija_igrac_fk] (Foreign Key)
+
+** Supporting actions
+
+The column [dbo].[Igrac].[transferi] is being dropped, data loss could occur.
+

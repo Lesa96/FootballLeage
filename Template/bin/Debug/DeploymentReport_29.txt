@@ -1,0 +1,38 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[Igrac]
+       [dbo].[Klub]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Table rebuild
+       [dbo].[Igrac] (Table)
+       [dbo].[Klub] (Table)
+
+** Supporting actions
+     Drop
+       [dbo].[igrac_vodi_fk] (Foreign Key)
+       [dbo].[igrac_klub_fk] (Foreign Key)
+       [dbo].[ima_igrac_fk] (Foreign Key)
+       [dbo].[klub_liga_fk] (Foreign Key)
+       [dbo].[navija_klub_fk] (Foreign Key)
+       [dbo].[poseduje_klub_fk] (Foreign Key)
+       [dbo].[pripada_klub_fk] (Foreign Key)
+       [dbo].[vodi_klub_fk] (Foreign Key)
+     Create
+       [dbo].[igrac_vodi_fk] (Foreign Key)
+       [dbo].[igrac_klub_fk] (Foreign Key)
+       [dbo].[ima_igrac_fk] (Foreign Key)
+       [dbo].[klub_liga_fk] (Foreign Key)
+       [dbo].[navija_klub_fk] (Foreign Key)
+       [dbo].[poseduje_klub_fk] (Foreign Key)
+       [dbo].[pripada_klub_fk] (Foreign Key)
+       [dbo].[vodi_klub_fk] (Foreign Key)
+       [dbo].[MyTrigger] (Trigger)
+       [dbo].[DeleteTriger] (Trigger)
+       [dbo].[UpdateTriger] (Trigger)

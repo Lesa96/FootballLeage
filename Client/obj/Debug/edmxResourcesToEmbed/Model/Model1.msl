@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BazaZaLiguModelStoreContainer" CdmEntityContainer="BazaZaLiguEntities">
+    <EntitySetMapping Name="Igracs">
+      <EntityTypeMapping TypeName="BazaZaLiguModel.Igrac">
+        <MappingFragment StoreEntitySet="Igrac">
+          <ScalarProperty Name="godine_igraca" ColumnName="godine_igraca" />
+          <ScalarProperty Name="id_igraca" ColumnName="id_igraca" />
+          <ScalarProperty Name="ime_igraca" ColumnName="ime_igraca" />
+          <ScalarProperty Name="prezime_igraca" ColumnName="prezime_igraca" />
+          <ScalarProperty Name="vodi_id_trenera" ColumnName="vodi_id_trenera" />
+          <ScalarProperty Name="vodi_naziv" ColumnName="vodi_naziv" />
+          <ScalarProperty Name="naziv_kluba" ColumnName="naziv_kluba" />
+          <ScalarProperty Name="odigranih_utakmica" ColumnName="odigranih_utakmica" />
+          <ScalarProperty Name="postignutih_golova" ColumnName="postignutih_golova" />
+          <ScalarProperty Name="prosek_golova" ColumnName="prosek_golova" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Klubs">
+      <EntityTypeMapping TypeName="BazaZaLiguModel.Klub">
+        <MappingFragment StoreEntitySet="Klub">
+          <ScalarProperty Name="vrednost" ColumnName="vrednost" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="grad" ColumnName="grad" />
+          <ScalarProperty Name="liga_id_lige" ColumnName="liga_id_lige" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ligas">
+      <EntityTypeMapping TypeName="BazaZaLiguModel.Liga">
+        <MappingFragment StoreEntitySet="Liga">
+          <ScalarProperty Name="id_lige" ColumnName="id_lige" />
+          <ScalarProperty Name="naziv_lige" ColumnName="naziv_lige" />
+          <ScalarProperty Name="drzava_lige" ColumnName="drzava_lige" />
+          <ScalarProperty Name="broj_klubova" ColumnName="broj_klubova" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Menadzers">
+      <EntityTypeMapping TypeName="BazaZaLiguModel.Menadzer">
+        <MappingFragment StoreEntitySet="Menadzer">
+          <ScalarProperty Name="drzava" ColumnName="drzava" />
+          <ScalarProperty Name="ime_menagera" ColumnName="ime_menagera" />
+          <ScalarProperty Name="prezime_menagera" ColumnName="prezime_menagera" />
+          <ScalarProperty Name="id_menagera" ColumnName="id_menagera" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Navijacs">
+      <EntityTypeMapping TypeName="BazaZaLiguModel.Navijac">
+        <MappingFragment StoreEntitySet="Navijac">
+          <ScalarProperty Name="drzava" ColumnName="drzava" />
+          <ScalarProperty Name="id_navijaca" ColumnName="id_navijaca" />
+          <ScalarProperty Name="ime_navijaca" ColumnName="ime_navijaca" />
+          <ScalarProperty Name="prezime_navijaca" ColumnName="prezime_navijaca" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Obezbedjenjes">
+      <EntityTypeMapping TypeName="BazaZaLiguModel.Obezbedjenje">
+        <MappingFragment StoreEntitySet="Obezbedjenje">
+          <ScalarProperty Name="drzava" ColumnName="drzava" />
+          <ScalarProperty Name="ime_radnika" ColumnName="ime_radnika" />
+          <ScalarProperty Name="prezime_radnika" ColumnName="prezime_radnika" />
+          <ScalarProperty Name="id_radnika" ColumnName="id_radnika" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Posedujes">
+      <EntityTypeMapping TypeName="BazaZaLiguModel.Poseduje">
+        <MappingFragment StoreEntitySet="Poseduje">
+          <ScalarProperty Name="klub_naziv" ColumnName="klub_naziv" />
+          <ScalarProperty Name="stadion_id_stadiona" ColumnName="stadion_id_stadiona" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sponzors">
+      <EntityTypeMapping TypeName="BazaZaLiguModel.Sponzor">
+        <MappingFragment StoreEntitySet="Sponzor">
+          <ScalarProperty Name="id_sponzora" ColumnName="id_sponzora" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stadions">
+      <EntityTypeMapping TypeName="BazaZaLiguModel.Stadion">
+        <MappingFragment StoreEntitySet="Stadion">
+          <ScalarProperty Name="kapacitet" ColumnName="kapacitet" />
+          <ScalarProperty Name="grad" ColumnName="grad" />
+          <ScalarProperty Name="naziv_stadiona" ColumnName="naziv_stadiona" />
+          <ScalarProperty Name="id_stadiona" ColumnName="id_stadiona" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sudijas">
+      <EntityTypeMapping TypeName="BazaZaLiguModel.Sudija">
+        <MappingFragment StoreEntitySet="Sudija">
+          <ScalarProperty Name="ime_sudije" ColumnName="ime_sudije" />
+          <ScalarProperty Name="prezime_sudije" ColumnName="prezime_sudije" />
+          <ScalarProperty Name="id_sudije" ColumnName="id_sudije" />
+          <ScalarProperty Name="nacionalnost_sudije" ColumnName="nacionalnost_sudije" />
+          <ScalarProperty Name="liga_id_lige" ColumnName="liga_id_lige" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Treners">
+      <EntityTypeMapping TypeName="BazaZaLiguModel.Trener">
+        <MappingFragment StoreEntitySet="Trener">
+          <ScalarProperty Name="drzava" ColumnName="drzava" />
+          <ScalarProperty Name="ime_trenera" ColumnName="ime_trenera" />
+          <ScalarProperty Name="prezime_trenera" ColumnName="prezime_trenera" />
+          <ScalarProperty Name="id_trenera" ColumnName="id_trenera" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vlasniks">
+      <EntityTypeMapping TypeName="BazaZaLiguModel.Vlasnik">
+        <MappingFragment StoreEntitySet="Vlasnik">
+          <ScalarProperty Name="drzava" ColumnName="drzava" />
+          <ScalarProperty Name="ime_vlasnika" ColumnName="ime_vlasnika" />
+          <ScalarProperty Name="prezime_vlasnika" ColumnName="prezime_vlasnika" />
+          <ScalarProperty Name="id_vlasnika" ColumnName="id_vlasnika" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vodis">
+      <EntityTypeMapping TypeName="BazaZaLiguModel.Vodi">
+        <MappingFragment StoreEntitySet="Vodi">
+          <ScalarProperty Name="trener_id_trenera" ColumnName="trener_id_trenera" />
+          <ScalarProperty Name="klub_naziv" ColumnName="klub_naziv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Ima" TypeName="BazaZaLiguModel.Ima" StoreEntitySet="Ima">
+      <EndProperty Name="Igrac">
+        <ScalarProperty Name="id_igraca" ColumnName="igrac_id_igraca" />
+      </EndProperty>
+      <EndProperty Name="Menadzer">
+        <ScalarProperty Name="id_menagera" ColumnName="menadzer_id_menagera" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Navija" TypeName="BazaZaLiguModel.Navija" StoreEntitySet="Navija">
+      <EndProperty Name="Klub">
+        <ScalarProperty Name="naziv" ColumnName="klub_naziv" />
+      </EndProperty>
+      <EndProperty Name="Navijac">
+        <ScalarProperty Name="id_navijaca" ColumnName="navijac_id_navijaca" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Pripada" TypeName="BazaZaLiguModel.Pripada" StoreEntitySet="Pripada">
+      <EndProperty Name="Klub">
+        <ScalarProperty Name="naziv" ColumnName="klub_naziv" />
+      </EndProperty>
+      <EndProperty Name="Vlasnik">
+        <ScalarProperty Name="id_vlasnika" ColumnName="vlasnik_id_vlasnika" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Sponzorise" TypeName="BazaZaLiguModel.Sponzorise" StoreEntitySet="Sponzorise">
+      <EndProperty Name="Liga">
+        <ScalarProperty Name="id_lige" ColumnName="liga_id_lige" />
+      </EndProperty>
+      <EndProperty Name="Sponzor">
+        <ScalarProperty Name="id_sponzora" ColumnName="sponzor_id_sponzora" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Zaposljava" TypeName="BazaZaLiguModel.Zaposljava" StoreEntitySet="Zaposljava">
+      <EndProperty Name="Obezbedjenje">
+        <ScalarProperty Name="id_radnika" ColumnName="obezbedjenje_id_radnika" />
+      </EndProperty>
+      <EndProperty Name="Poseduje">
+        <ScalarProperty Name="klub_naziv" ColumnName="poseduje_klub_naziv" />
+        <ScalarProperty Name="stadion_id_stadiona" ColumnName="poseduje_stadion_id_stadiona" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="SumProcedura" FunctionName="BazaZaLiguModel.Store.SumProcedura" />
+    <FunctionImportMapping FunctionImportName="GetFreeTrenerProcedura" FunctionName="BazaZaLiguModel.Store.GetFreeTrenerProcedura" />
+    <EntitySetMapping Name="LogUsers">
+      <EntityTypeMapping TypeName="BazaZaLiguModel.LogUser">
+        <MappingFragment StoreEntitySet="LogUser">
+          <ScalarProperty Name="role_usera" ColumnName="role_usera" />
+          <ScalarProperty Name="password_usera" ColumnName="password_usera" />
+          <ScalarProperty Name="username_usera" ColumnName="username_usera" />
+          <ScalarProperty Name="id_usera" ColumnName="id_usera" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="transferistorijas">
+      <EntityTypeMapping TypeName="BazaZaLiguModel.transferistorija">
+        <MappingFragment StoreEntitySet="transferistorija">
+          <ScalarProperty Name="datum" ColumnName="datum" />
+          <ScalarProperty Name="igrac_id_igraca" ColumnName="igrac_id_igraca" />
+          <ScalarProperty Name="klub" ColumnName="klub" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

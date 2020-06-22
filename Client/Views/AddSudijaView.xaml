@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="Client.Views.AddSudijaView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Client.Views"
+             xmlns:data ="clr-namespace:Client.Model"
+             xmlns:viewmodel ="clr-namespace:Client.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="../Pictures/PocetnaLiga.jpg"></ImageBrush>
+        </Grid.Background>
+        <Label Content="Ime sudije:" Background="AliceBlue" HorizontalAlignment="Left" Margin="23,53,0,0" VerticalAlignment="Top"/>
+        <Label Content="Prezime:" Background="AliceBlue" HorizontalAlignment="Left" Margin="23,110,0,0" VerticalAlignment="Top"/>
+        <Label Content="Drzava:" Background="AliceBlue" HorizontalAlignment="Left" Margin="23,167,0,0" VerticalAlignment="Top"/>
+        <TextBox  Text="{Binding Sudija_prop.ime_sudije, Mode=TwoWay}" HorizontalAlignment="Left" Height="21" Margin="23,84,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="140"/>
+        <TextBox Text="{Binding Sudija_prop.prezime_sudije , Mode=TwoWay}" HorizontalAlignment="Left" Height="21" Margin="23,141,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="140"/>
+        <ComboBox ItemsSource="{Binding Drzave, Mode=TwoWay}" Cursor="Hand" SelectedItem="{Binding Sudija_prop.nacionalnost_sudije , Mode=TwoWay}" HorizontalAlignment="Left" Height="24" Margin="23,198,0,0" VerticalAlignment="Top" Width="140"/>
+        <Label Content="Odabrati jednu ligu (opciono):" Background="AliceBlue" HorizontalAlignment="Left" Margin="23,227,0,0" VerticalAlignment="Top" Width="168"/>
+        <ComboBox ItemsSource="{Binding Naziv_lige, Mode=TwoWay}" Cursor="Hand" SelectedItem="{Binding SelektovanaLiga , Mode=TwoWay}" HorizontalAlignment="Left" Height="24" Margin="23,258,0,0" VerticalAlignment="Top" Width="140"/>
+
+        <Button Content="Dodaj sudiju"  Style="{StaticResource RoundButton}" Command="{Binding addCommand}" HorizontalAlignment="Left" Height="50" Margin="23,328,0,0" VerticalAlignment="Top" Width="142"/>
+    </Grid>
+</UserControl>

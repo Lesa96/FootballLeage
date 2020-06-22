@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="Client.Views.AddIgracView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Client.Views"
+             xmlns:data ="clr-namespace:Client.Model"
+             xmlns:viewmodel ="clr-namespace:Client.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid >
+        <Grid.Background>
+            <ImageBrush ImageSource="../Pictures/PocetnaLiga.jpg"></ImageBrush>
+        </Grid.Background>
+        <Label Content="Broj datih golova:" Background="AliceBlue" HorizontalAlignment="Left" Margin="361,110,0,0" VerticalAlignment="Top"/>
+        <Label Content="Ime Igraca:" Background="AliceBlue" HorizontalAlignment="Left" Margin="23,53,0,0" VerticalAlignment="Top"/>
+        <Label Content="Odigranih utakmica" Background="AliceBlue" HorizontalAlignment="Left" Margin="361,167,0,0" VerticalAlignment="Top"/>
+        <Label Content="Prezime Igraca:" Background="AliceBlue" HorizontalAlignment="Left" Margin="23,110,0,0" VerticalAlignment="Top"/>
+        <Label Content="Klub za koji igra:" Background="AliceBlue" HorizontalAlignment="Left" Margin="23,167,0,0" VerticalAlignment="Top"/>
+        <Label Content="Godine Igraca:" Background="AliceBlue" HorizontalAlignment="Left" Margin="361,53,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Godine_textbox" Text="{Binding Godine, Mode=OneWayToSource}" HorizontalAlignment="Left" Height="21" Margin="361,84,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="140"/>
+        <TextBox x:Name="Golovi_textbox" Text="{Binding Golovi, Mode=OneWayToSource}" HorizontalAlignment="Left" Height="21" Margin="361,141,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="140"/>
+        <TextBox x:Name="Ime_textbox" Text="{Binding Igrac_prop.ime_igraca , Mode=TwoWay}" HorizontalAlignment="Left" Height="21" Margin="23,84,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="140"/>
+        <TextBox x:Name="Odigranih_textbox" Text="{Binding Utakmice , Mode=OneWayToSource}" HorizontalAlignment="Left" Height="21" Margin="361,198,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="140"/>
+        <TextBox x:Name="Prezime_textbox" Text="{Binding Igrac_prop.prezime_igraca , Mode=TwoWay}" HorizontalAlignment="Left" Height="21" Margin="23,141,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="140"/>
+        <ComboBox ItemsSource="{Binding Naziv_kluba, Mode=TwoWay}" Cursor="Hand" SelectedItem="{Binding SelektovaniKlub , Mode=TwoWay}" HorizontalAlignment="Left" Height="24" Margin="23,198,0,0" VerticalAlignment="Top" Width="140"/>
+
+        <Button Content="Dodaj Igraca"  Style="{StaticResource RoundButton}" Command="{Binding addCommand}" HorizontalAlignment="Left" Height="50" Margin="23,328,0,0" VerticalAlignment="Top" Width="142"/>
+    </Grid>
+</UserControl>

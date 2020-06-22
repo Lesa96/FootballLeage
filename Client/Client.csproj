@@ -1,0 +1,603 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9EBE6FE1-67E4-4D62-8634-6A346FBD3861}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Client</RootNamespace>
+    <AssemblyName>Client</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="LogInView.xaml.cs">
+      <DependentUpon>LogInView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LogInViewModel.cs" />
+    <Compile Include="MainWindowViewModel.cs" />
+    <Compile Include="Model\Igrac.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Igrac_Selektovan.cs" />
+    <Compile Include="Model\Klub.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Klub_Selektovan.cs" />
+    <Compile Include="Model\Liga.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Liga_Selektovan.cs" />
+    <Compile Include="Model\LogUser.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Menadzer.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Menadzer_Selektovan.cs" />
+    <Compile Include="Model\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Navijac.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Navijac_Selektovan.cs" />
+    <Compile Include="Model\Obezbedjenje.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Poseduje.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Poseduje_Selektovan.cs" />
+    <Compile Include="Model\Radnik_Selektovan.cs" />
+    <Compile Include="Model\Sponzor.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Sponzor_Selektovan.cs" />
+    <Compile Include="Model\Stadion.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Stadion_Selektovan.cs" />
+    <Compile Include="Model\Sudija.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Sudija_Selektovan.cs" />
+    <Compile Include="Model\transferistorija.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Trener.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Trener_Selektovan.cs" />
+    <Compile Include="Model\Vlasnik.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Vlasnik_Selektovan.cs" />
+    <Compile Include="Model\Vodi.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MyICommand.cs" />
+    <Compile Include="ViewModelLocator.cs" />
+    <Compile Include="ViewModels\AddIgracViewModel.cs" />
+    <Compile Include="ViewModels\AddKlubViewModel.cs" />
+    <Compile Include="ViewModels\AddLigaViewModel.cs" />
+    <Compile Include="ViewModels\AddMenadzerViewModel.cs" />
+    <Compile Include="ViewModels\AddNavijacViewModel.cs" />
+    <Compile Include="ViewModels\AddObezbedjenjeViewModel.cs" />
+    <Compile Include="ViewModels\AddStadionViewModel.cs" />
+    <Compile Include="ViewModels\AddSudijaViewModel.cs" />
+    <Compile Include="ViewModels\AddTrenerViewModel.cs" />
+    <Compile Include="ViewModels\AddVlasnikViewModel.cs" />
+    <Compile Include="ViewModels\IgracViewModel.cs" />
+    <Compile Include="ViewModels\KlubViewModel.cs" />
+    <Compile Include="ViewModels\KorisniciVIewModel.cs" />
+    <Compile Include="ViewModels\LigaViewModel.cs" />
+    <Compile Include="ViewModels\MenadzerViewModel.cs" />
+    <Compile Include="ViewModels\MyProfileVIewModel.cs" />
+    <Compile Include="ViewModels\NavijacViewModel.cs" />
+    <Compile Include="ViewModels\ObezbedjenjeViewModel.cs" />
+    <Compile Include="ViewModels\PosedujeViewModel.cs" />
+    <Compile Include="ViewModels\ProfileViewModel.cs" />
+    <Compile Include="ViewModels\RegisterViewModel.cs" />
+    <Compile Include="ViewModels\ShowIgracViewModel.cs" />
+    <Compile Include="ViewModels\ShowKlubViewModel.cs" />
+    <Compile Include="ViewModels\ShowLigaViewModel.cs" />
+    <Compile Include="ViewModels\ShowMenadzerViewModel.cs" />
+    <Compile Include="ViewModels\ShowNavijacViewModel.cs" />
+    <Compile Include="ViewModels\ShowObezbedjenjeViewModel.cs" />
+    <Compile Include="ViewModels\ShowPosedujeViewModel.cs" />
+    <Compile Include="ViewModels\ShowStadionViewModel.cs" />
+    <Compile Include="ViewModels\ShowSudijaViewModel.cs" />
+    <Compile Include="ViewModels\ShowTrenerViewModel.cs" />
+    <Compile Include="ViewModels\ShowVlasnikViewModel.cs" />
+    <Compile Include="ViewModels\StadionViewModel.cs" />
+    <Compile Include="ViewModels\SudijaViewModel.cs" />
+    <Compile Include="ViewModels\TrenerViewModel.cs" />
+    <Compile Include="ViewModels\UpdateIgracViewModel.cs" />
+    <Compile Include="ViewModels\UpdateKlubViewModel.cs" />
+    <Compile Include="ViewModels\UpdateLigaViewModel.cs" />
+    <Compile Include="ViewModels\UpdateMenadzerViewModel.cs" />
+    <Compile Include="ViewModels\UpdateNavijacViewModel.cs" />
+    <Compile Include="ViewModels\UpdateObezbedjenjeViewModel.cs" />
+    <Compile Include="ViewModels\UpdatePosedujeViewModel.cs" />
+    <Compile Include="ViewModels\UpdateStadionViewModel.cs" />
+    <Compile Include="ViewModels\UpdateSudijaViewModel.cs" />
+    <Compile Include="ViewModels\UpdateTrenerViewModel.cs" />
+    <Compile Include="ViewModels\UpdateVlasnikViewModel.cs" />
+    <Compile Include="ViewModels\VlasnikViewModel.cs" />
+    <Compile Include="Views\AddIgracView.xaml.cs">
+      <DependentUpon>AddIgracView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddKlubView.xaml.cs">
+      <DependentUpon>AddKlubView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddLigaView.xaml.cs">
+      <DependentUpon>AddLigaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddMenadzerView.xaml.cs">
+      <DependentUpon>AddMenadzerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddNavijacView.xaml.cs">
+      <DependentUpon>AddNavijacView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddObezbedjenjeView.xaml.cs">
+      <DependentUpon>AddObezbedjenjeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddStadionView.xaml.cs">
+      <DependentUpon>AddStadionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddSudijaView.xaml.cs">
+      <DependentUpon>AddSudijaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddTrenerView.xaml.cs">
+      <DependentUpon>AddTrenerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddVlasnikView.xaml.cs">
+      <DependentUpon>AddVlasnikView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IgracView.xaml.cs">
+      <DependentUpon>IgracView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\KlubView.xaml.cs">
+      <DependentUpon>KlubView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\KorisniciView.xaml.cs">
+      <DependentUpon>KorisniciView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LigaView.xaml.cs">
+      <DependentUpon>LigaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MenadzerView.xaml.cs">
+      <DependentUpon>MenadzerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MyProfileVIew.xaml.cs">
+      <DependentUpon>MyProfileVIew.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NavijacView.xaml.cs">
+      <DependentUpon>NavijacView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ObezbedjenjeView.xaml.cs">
+      <DependentUpon>ObezbedjenjeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PosedujeView.xaml.cs">
+      <DependentUpon>PosedujeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProfileView.xaml.cs">
+      <DependentUpon>ProfileView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProsekGodinaView.xaml.cs">
+      <DependentUpon>ProsekGodinaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RegisterView.xaml.cs">
+      <DependentUpon>RegisterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShowIgracView.xaml.cs">
+      <DependentUpon>ShowIgracView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShowKlubView.xaml.cs">
+      <DependentUpon>ShowKlubView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShowLigaView.xaml.cs">
+      <DependentUpon>ShowLigaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShowMenadzerView.xaml.cs">
+      <DependentUpon>ShowMenadzerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShowNavijacView.xaml.cs">
+      <DependentUpon>ShowNavijacView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShowObezbedjenjeView.xaml.cs">
+      <DependentUpon>ShowObezbedjenjeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShowPosedujeView.xaml.cs">
+      <DependentUpon>ShowPosedujeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShowStadionView.xaml.cs">
+      <DependentUpon>ShowStadionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShowSudijaView.xaml.cs">
+      <DependentUpon>ShowSudijaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShowTrenerView.xaml.cs">
+      <DependentUpon>ShowTrenerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShowVlasnikView.xaml.cs">
+      <DependentUpon>ShowVlasnikView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StadionView.xaml.cs">
+      <DependentUpon>StadionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SudijaView.xaml.cs">
+      <DependentUpon>SudijaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TrenerView.xaml.cs">
+      <DependentUpon>TrenerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UpdateIgracView.xaml.cs">
+      <DependentUpon>UpdateIgracView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UpdateKlubView.xaml.cs">
+      <DependentUpon>UpdateKlubView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UpdateLigaView.xaml.cs">
+      <DependentUpon>UpdateLigaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UpdateMenadzerView.xaml.cs">
+      <DependentUpon>UpdateMenadzerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UpdateNavijacView.xaml.cs">
+      <DependentUpon>UpdateNavijacView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UpdateObezbedjenjeView.xaml.cs">
+      <DependentUpon>UpdateObezbedjenjeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UpdatePosedujeView.xaml.cs">
+      <DependentUpon>UpdatePosedujeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UpdateStadionView.xaml.cs">
+      <DependentUpon>UpdateStadionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UpdateSudijaView.xaml.cs">
+      <DependentUpon>UpdateSudijaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UpdateTrenerView.xaml.cs">
+      <DependentUpon>UpdateTrenerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UpdateVlasnikView.xaml.cs">
+      <DependentUpon>UpdateVlasnikView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VlasnikView.xaml.cs">
+      <DependentUpon>VlasnikView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="LogInView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BindableBase.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Views\AddIgracView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AddKlubView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AddLigaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AddMenadzerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AddNavijacView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AddObezbedjenjeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AddStadionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AddSudijaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AddTrenerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AddVlasnikView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\IgracView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\KlubView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\KorisniciView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LigaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MenadzerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MyProfileVIew.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NavijacView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ObezbedjenjeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PosedujeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProfileView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProsekGodinaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RegisterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ShowIgracView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ShowKlubView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ShowLigaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ShowMenadzerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ShowNavijacView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ShowObezbedjenjeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ShowPosedujeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ShowStadionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ShowSudijaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ShowTrenerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ShowVlasnikView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\StadionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SudijaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TrenerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UpdateIgracView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UpdateKlubView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UpdateLigaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UpdateMenadzerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UpdateNavijacView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UpdateObezbedjenjeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UpdatePosedujeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UpdateStadionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UpdateSudijaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UpdateTrenerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UpdateVlasnikView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\VlasnikView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EntityDeploy Include="Model\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\PocetnaLiga.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Resource Include="Pictures\profil.ico" />
+    <Resource Include="Pictures\ball.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

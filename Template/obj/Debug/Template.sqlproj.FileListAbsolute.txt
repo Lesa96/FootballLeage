@@ -1,0 +1,29 @@
+C:\Users\e375-2015\Desktop\Blok6\Template BP2\Template\bin\Debug\Template.dacpac
+C:\Users\e375-2015\Desktop\Blok6\Template BP2\Template\bin\Debug\Template.dll
+C:\Users\e375-2015\Desktop\Blok6\Template BP2\Template\bin\Debug\Template.pdb
+C:\Users\e375-2015\Desktop\Blok6\Template BP2\Template\obj\Debug\Model.xml
+C:\Users\e375-2015\Desktop\Blok6\Template BP2\Template\obj\Debug\refactor.xml
+C:\Users\e375-2015\Desktop\Blok6\Template BP2\Template\obj\Debug\postdeploy.sql
+C:\Users\e375-2015\Desktop\Blok6\Template BP2\Template\obj\Debug\predeploy.sql
+C:\Users\e375-2015\Desktop\Blok6\Template BP2\Template\obj\Debug\Template.dll
+C:\Users\e375-2015\Desktop\Blok6\Template BP2\Template\obj\Debug\Template.pdb
+D:\Fax\IV godina\Blok6\Blok6\Template BP2\Template\bin\Debug\Template.dacpac
+D:\Fax\IV godina\Blok6\Blok6\Template BP2\Template\bin\Debug\Template.dll
+D:\Fax\IV godina\Blok6\Blok6\Template BP2\Template\bin\Debug\Template.pdb
+D:\Fax\IV godina\Blok6\Blok6\Template BP2\Template\obj\Debug\Template.sqlprojResolveAssemblyReference.cache
+D:\Fax\IV godina\Blok6\Blok6\Template BP2\Template\obj\Debug\Model.xml
+D:\Fax\IV godina\Blok6\Blok6\Template BP2\Template\obj\Debug\refactor.xml
+D:\Fax\IV godina\Blok6\Blok6\Template BP2\Template\obj\Debug\postdeploy.sql
+D:\Fax\IV godina\Blok6\Blok6\Template BP2\Template\obj\Debug\predeploy.sql
+D:\Fax\IV godina\Blok6\Blok6\Template BP2\Template\obj\Debug\Template.dll
+D:\Fax\IV godina\Blok6\Blok6\Template BP2\Template\obj\Debug\Template.pdb
+C:\Users\Sasa Dragomirovic\Desktop\Diplomski\Blok6\Template BP2\Template\bin\Debug\Template.dacpac
+C:\Users\Sasa Dragomirovic\Desktop\Diplomski\Blok6\Template BP2\Template\bin\Debug\Template.dll
+C:\Users\Sasa Dragomirovic\Desktop\Diplomski\Blok6\Template BP2\Template\bin\Debug\Template.pdb
+C:\Users\Sasa Dragomirovic\Desktop\Diplomski\Blok6\Template BP2\Template\obj\Debug\Template.dll
+C:\Users\Sasa Dragomirovic\Desktop\Diplomski\Blok6\Template BP2\Template\obj\Debug\Template.pdb
+C:\Users\Sasa Dragomirovic\Desktop\Diplomski\Blok6\Template BP2\Template\obj\Debug\Template.sqlprojResolveAssemblyReference.cache
+C:\Users\Sasa Dragomirovic\Desktop\Diplomski\Blok6\Template BP2\Template\obj\Debug\Model.xml
+C:\Users\Sasa Dragomirovic\Desktop\Diplomski\Blok6\Template BP2\Template\obj\Debug\refactor.xml
+C:\Users\Sasa Dragomirovic\Desktop\Diplomski\Blok6\Template BP2\Template\obj\Debug\postdeploy.sql
+C:\Users\Sasa Dragomirovic\Desktop\Diplomski\Blok6\Template BP2\Template\obj\Debug\predeploy.sql

@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="Client.Views.UpdateSudijaView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Client.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="../Pictures/PocetnaLiga.jpg"></ImageBrush>
+        </Grid.Background>
+        <DataGrid ItemsSource="{Binding sudijeS}" Style="{StaticResource DataGridStyle}" IsReadOnly="True" AlternatingRowBackground="Gainsboro" SelectionMode="Single" SelectedValue="{Binding Selektovani_sudija, Mode=TwoWay}" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="199" Margin="10,85,0,0" VerticalAlignment="Top" Width="780">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding S.id_sudije}" Width="60" />
+                <DataGridTextColumn Header="Ime" Binding="{Binding S.ime_sudije}" Width="*" />
+                <DataGridTextColumn Header="Prezime" Binding="{Binding S.prezime_sudije}" Width="*" />
+                <DataGridTextColumn Header="Drzava" Binding="{Binding S.nacionalnost_sudije}" Width="*" />
+                <DataGridTextColumn Header="Liga" Binding="{Binding Liga_Sudije}" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="311,319,0,0" TextWrapping="Wrap" Text="{Binding Selektovani_sudija.S.ime_sudije}" VerticalAlignment="Top" Width="160"/>
+        <Label Content="Ime sudije" Background="AliceBlue" HorizontalAlignment="Left" Height="25" Margin="311,289,0,0" VerticalAlignment="Top" Width="65"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="515,319,0,0" TextWrapping="Wrap" Text="{Binding Selektovani_sudija.S.prezime_sudije}" VerticalAlignment="Top" Width="160"/>
+        <Label Background="AliceBlue" Content="Prezime sudije" HorizontalAlignment="Left" Height="25" Margin="515,289,0,0" VerticalAlignment="Top" Width="89"/>
+        <ComboBox ItemsSource="{Binding Drzave, Mode=TwoWay}" Cursor="Hand" SelectedItem="{Binding Selektovani_sudija.S.nacionalnost_sudije , Mode=TwoWay}" HorizontalAlignment="Left" Height="24" Margin="311,374,0,0" VerticalAlignment="Top" Width="140"/>
+        <Label Content="Drzava sudije" Background="AliceBlue" HorizontalAlignment="Left" Height="25" Margin="311,344,0,0" VerticalAlignment="Top" Width="80"/>
+        <Label Content="Liga" Background="AliceBlue" HorizontalAlignment="Left" Margin="515,343,0,0" VerticalAlignment="Top" Width="35"/>
+        <ComboBox ItemsSource="{Binding Naziv_lige, Mode=TwoWay}" Cursor="Hand" SelectedItem="{Binding Selektovani_sudija.Liga_Sudije , Mode=TwoWay}" HorizontalAlignment="Left" Height="20" Margin="515,374,0,0" VerticalAlignment="Top" Width="140"/>
+
+
+        <Button Content="Promeni sudiju"  Style="{StaticResource RoundButton}" Command="{Binding UpdateCommand}" IsEnabled="{Binding CanUpdate}" HorizontalAlignment="Left" Height="50" Margin="23,328,0,0" VerticalAlignment="Top" Width="142"/>
+    </Grid>
+</UserControl>

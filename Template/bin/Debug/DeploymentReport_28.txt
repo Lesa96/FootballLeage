@@ -1,0 +1,25 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Alter
+       [dbo].[Menadzer] (Table)
+       [dbo].[Navijac] (Table)
+       [dbo].[Obezbedjenje] (Table)
+       [dbo].[Stadion] (Table)
+       [dbo].[Trener] (Table)
+       [dbo].[Vlasnik] (Table)
+
+** Supporting actions
+     Refresh
+       [dbo].[GetFreeTrenerProcedura] (Procedure)
+
+If this deployment is executed, changes to [dbo].[Trener] might introduce run-time errors in [dbo].[SumProcedura].
+

@@ -1,0 +1,132 @@
+﻿<Window x:Class="Client.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Client"
+        xmlns:viewmodel ="clr-namespace:Client"
+        xmlns:views="clr-namespace:Client.Views"
+        xmlns:viewModels="clr-namespace:Client.ViewModels"
+        xmlns:vml ="clr-namespace:Client"
+        mc:Ignorable="d"
+        Title="Fudbalska Liga" Background="White" Icon="Pictures/ball.ico" WindowStartupLocation="CenterScreen"  Height="530" Width="818" ResizeMode="CanMinimize">
+    
+    <Window.Resources>
+        
+        
+        <DataTemplate DataType="{x:Type viewModels:LigaViewModel}">
+            <views:LigaView></views:LigaView>
+
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewModels:KlubViewModel}">
+            <views:KlubView></views:KlubView>
+
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewModels:TrenerViewModel}">
+            <views:TrenerView></views:TrenerView>
+
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewModels:IgracViewModel}">
+            <views:IgracView></views:IgracView>
+
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:SudijaViewModel}">
+            <views:SudijaView></views:SudijaView>
+
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:NavijacViewModel}">
+            <views:NavijacView></views:NavijacView>
+
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:StadionViewModel}">
+            <views:StadionView></views:StadionView>
+
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:ObezbedjenjeViewModel}">
+            <views:ObezbedjenjeView></views:ObezbedjenjeView>
+
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:VlasnikViewModel}">
+            <views:VlasnikView></views:VlasnikView>
+
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:MenadzerViewModel}">
+            <views:MenadzerView></views:MenadzerView>
+
+        </DataTemplate>
+
+    </Window.Resources>
+    <Grid>
+        
+        <DockPanel Grid.Row="0">
+            <Menu DockPanel.Dock="Top" >
+                <MenuItem x:Name="LigaMenu"  Header="LIGA" Command="{Binding NavCommand}"
+                          CommandParameter="myLiga"
+                          Width="73" Click="ChangeMenu_Click"
+                          BorderBrush="Black" 
+                          Height="30"  Cursor="Hand" />
+                <MenuItem x:Name="KlubMenu" Header="KLUB" Command="{Binding NavCommand}"
+                          CommandParameter="myKlub"
+                          Width="73" 
+                          BorderBrush="Black" Click="ChangeMenu_Click"
+                          Height="30" Cursor="Hand"/>
+                <MenuItem x:Name="IgracMenu" Header="IGRAC" Command="{Binding NavCommand}"
+                          CommandParameter="myIgrac"
+                          Width="73"
+                          BorderBrush="Black" Click="ChangeMenu_Click"
+                          Height="30" Cursor="Hand"/>
+                <MenuItem x:Name="TrenerMenu" Header="TRENER" Command="{Binding NavCommand}"
+                          CommandParameter="myTrener"
+                          Width="73"
+                          BorderBrush="Black" Click="ChangeMenu_Click"
+                          Height="30" Cursor="Hand"/>
+                <MenuItem x:Name="SudijaMenu" Header="SUDIJA" Command="{Binding NavCommand}"
+                          CommandParameter="mySudija"
+                          Width="73"
+                          BorderBrush="Black" Click="ChangeMenu_Click"
+                          Height="30" Cursor="Hand"/>
+                <MenuItem x:Name="NavijacMenu" Header="NAVIJAC" Command="{Binding NavCommand}"
+                          CommandParameter="myNavijac"
+                          Width="73"
+                          BorderBrush="Black" Click="ChangeMenu_Click"
+                          Height="30" Cursor="Hand"/>
+                <MenuItem x:Name="StadionMenu" Header="STADION" Command="{Binding NavCommand}"
+                          CommandParameter="myStadion"
+                          Width="73"
+                          BorderBrush="Black" Click="ChangeMenu_Click"
+                          Height="30" Cursor="Hand"/>
+                <MenuItem x:Name="RadnikMenu" Header="RADNIK" Command="{Binding NavCommand}"
+                          CommandParameter="myObezbedjenje"
+                          Width="73"
+                          BorderBrush="Black" Click="ChangeMenu_Click"
+                          Height="30" Cursor="Hand"/>
+                <MenuItem x:Name="VlasnikMenu" Header="VLASNIK" Command="{Binding NavCommand}"
+                          CommandParameter="myVlasnik"
+                          Width="73"
+                          BorderBrush="Black" Click="ChangeMenu_Click"
+                          Height="30" Cursor="Hand"/>
+                <MenuItem x:Name="MenadzerMenu" Header="MENADZER" Command="{Binding NavCommand}"
+                          CommandParameter="myMenadzer"
+                          Width="73"
+                          BorderBrush="Black" Click="ChangeMenu_Click"
+                          Height="30" Cursor="Hand"/>
+                <MenuItem Visibility="Hidden" Width="35" />
+                <MenuItem x:Name="ProfilMenu" Header="Profil" Command="{Binding NavCommand}"
+                          CommandParameter="myProfil"
+                          Width="36"
+                          BorderBrush="Gray" TextBlock.FontStyle="Italic"  TextBlock.FontFamily="Underline" Foreground="DarkGreen" BorderThickness="0"
+                          Height="30" Cursor="Hand"/>
+                
+            </Menu>
+        </DockPanel>
+        <Grid Margin="0,32,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="Pictures/PocetnaLiga.jpg"></ImageBrush>
+            </Grid.Background>
+            <ContentControl Content="{Binding CurrentViewModel}"/>
+        </Grid>
+    </Grid>
+</Window>

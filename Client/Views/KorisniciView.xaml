@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="Client.Views.KorisniciView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Client.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <DataGrid ItemsSource="{Binding korisnici}" Style="{StaticResource DataGridStyle}" IsReadOnly="True" AlternatingRowBackground="Gainsboro" SelectionMode="Single" SelectedValue="{Binding Selektovani_korisnik, Mode=TwoWay}" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="199" Margin="10,55,0,0" VerticalAlignment="Top" Width="690">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID korisnika" Binding="{Binding id_usera}" Width="*" />
+                <DataGridTextColumn Header="Korisnicko ime" Binding="{Binding username_usera}" Width="*" />
+                <DataGridTextColumn Header="Klasa naloga" Binding="{Binding role_usera}" Width="*" />
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button Content="Obrisi Korisnika"  Style="{StaticResource RoundButton}" Visibility="{Binding Visibility}" Command="{Binding DeleteCommand}" IsEnabled="{Binding CanDelete}" HorizontalAlignment="Left" Height="50" Margin="23,268,0,0" VerticalAlignment="Top" Width="142"/>
+
+    </Grid>
+</UserControl>

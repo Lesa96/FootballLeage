@@ -1,0 +1,48 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[Igra] (Table)
+       [dbo].[Igrac] (Table)
+       [dbo].[Ima] (Table)
+       [dbo].[Klub] (Table)
+       [dbo].[Liga] (Table)
+       [dbo].[Menadzer] (Table)
+       [dbo].[Obezbedjenje] (Table)
+       [dbo].[Poseduje] (Table)
+       [dbo].[Pripada] (Table)
+       [dbo].[Sponzor] (Table)
+       [dbo].[Sponzorise] (Table)
+       [dbo].[Stadion] (Table)
+       [dbo].[Sudija] (Table)
+       [dbo].[Trener] (Table)
+       [dbo].[Vlasnik] (Table)
+       [dbo].[Vodi] (Table)
+       [dbo].[Zaposljava] (Table)
+       [dbo].[igra_klub_fk] (Foreign Key)
+       [dbo].[igra_igrac_fk] (Foreign Key)
+       [dbo].[igrac_vodi_fk] (Foreign Key)
+       [dbo].[ima_menadzer_fk] (Foreign Key)
+       [dbo].[ima_igrac_fk] (Foreign Key)
+       [dbo].[klub_liga_fk] (Foreign Key)
+       [dbo].[poseduje_stadion_fk] (Foreign Key)
+       [dbo].[poseduje_klub_fk] (Foreign Key)
+       [dbo].[pripada_vlasnik_fk] (Foreign Key)
+       [dbo].[pripada_klub_fk] (Foreign Key)
+       [dbo].[sponzorise_sponzor_fk] (Foreign Key)
+       [dbo].[sponzorise_liga_fk] (Foreign Key)
+       [dbo].[sudija_liga_fk] (Foreign Key)
+       [dbo].[vodi_trener_fk] (Foreign Key)
+       [dbo].[vodi_klub_fk] (Foreign Key)
+       [dbo].[zaposljava_poseduje_fk] (Foreign Key)
+       [dbo].[zaposljava_obezbedjenje_fk] (Foreign Key)
+
+** Supporting actions

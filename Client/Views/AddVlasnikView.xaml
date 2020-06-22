@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="Client.Views.AddVlasnikView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Client.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Label Content="Ime Vlasnika:" Background="AliceBlue" HorizontalAlignment="Left" Margin="23,53,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Ime_textbox" Text="{Binding Vlasnik_prop.ime_vlasnika , Mode=TwoWay}" HorizontalAlignment="Left" Height="21" Margin="23,84,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="140"/>
+        <Label Content="Prezime Vlasnika:" Background="AliceBlue" HorizontalAlignment="Left" Margin="23,110,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Prezime_textbox" Text="{Binding Vlasnik_prop.prezime_vlasnika , Mode=TwoWay}" HorizontalAlignment="Left" Height="21" Margin="23,141,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="140"/>
+        <Label Content="Drzava Vlasnika:" Background="AliceBlue" HorizontalAlignment="Left" Margin="23,167,0,0" VerticalAlignment="Top"/>
+        <ComboBox ItemsSource="{Binding Drzave, Mode=TwoWay}" Cursor="Hand" SelectedItem="{Binding Vlasnik_prop.drzava , Mode=TwoWay}" HorizontalAlignment="Left" Height="24" Margin="23,198,0,0" VerticalAlignment="Top" Width="140"/>
+
+        <ListBox ItemsSource="{Binding klubovi, Mode=TwoWay}" HorizontalAlignment="Left" Height="165" Margin="364,84,0,0" VerticalAlignment="Top" Width="201">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <CheckBox IsChecked="{Binding IsSelected, Mode=TwoWay}" />
+                        <TextBlock Text="{Binding K.naziv, Mode=TwoWay}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Label Content="Bar jedan klub ciji je vlasnik:" Background="AliceBlue" HorizontalAlignment="Left" Margin="364,53,0,0" VerticalAlignment="Top"/>
+
+        <Button Content="Dodaj Vlasnika" Style="{StaticResource RoundButton}" Command="{Binding addCommand}" HorizontalAlignment="Left" Height="50" Margin="23,328,0,0" VerticalAlignment="Top" Width="142"/>
+
+    </Grid>
+</UserControl>

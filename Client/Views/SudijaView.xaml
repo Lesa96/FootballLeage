@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="Client.Views.SudijaView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:data ="clr-namespace:Client.Model"
+             xmlns:views="clr-namespace:Client.Views"
+             xmlns:viewmodel ="clr-namespace:Client.ViewModels"
+             xmlns:vml ="clr-namespace:Client"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <DataTemplate DataType="{x:Type viewmodel:AddSudijaViewModel}">
+            <views:AddSudijaView></views:AddSudijaView>
+            
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodel:ShowSudijaViewModel}">
+            <views:ShowSudijaView></views:ShowSudijaView>
+
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodel:UpdateSudijaViewModel}">
+            <views:UpdateSudijaView></views:UpdateSudijaView>
+
+        </DataTemplate>
+    </UserControl.Resources>
+
+    <Grid>
+        <DockPanel>
+            <Menu DockPanel.Dock="Top">
+                <MenuItem x:Name="Show" Header="Prikazi Sudije" Command="{Binding NavCommand}"
+                          CommandParameter="myShow" Background="Gainsboro"
+                          Width="108" Click="ChangeMenu_Click"
+                          BorderBrush="Black"
+                          Height="30" Cursor="Hand"/>
+                <MenuItem x:Name="Add" Header="Dodaj Sudiju" Visibility="{Binding Visibility}" Command="{Binding NavCommand}"
+                          CommandParameter="myAdd"
+                          Width="108" Click="ChangeMenu_Click"
+                          BorderBrush="Black"
+                          Height="30" Cursor="Hand"/>
+                <MenuItem x:Name="Update" Header="Promeni sudiju" Visibility="{Binding Visibility}" Command="{Binding NavCommand}"
+                          CommandParameter="myUpdate"
+                          Width="108" Click="ChangeMenu_Click"
+                          BorderBrush="Black"
+                          Height="30" Cursor="Hand"/>
+
+            </Menu>
+        </DockPanel>
+
+        <Grid Margin="0,33,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="../Pictures/PocetnaLiga.jpg"></ImageBrush>
+            </Grid.Background>
+            <ContentControl Content="{Binding CurrentViewModel}"/>
+        </Grid>
+
+    </Grid>
+</UserControl>

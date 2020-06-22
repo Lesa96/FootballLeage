@@ -1,0 +1,19 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The type for column transferi in table [dbo].[Igrac] is currently  VARCHAR (1) NULL but is being changed to  INT NULL.
+         Data loss could occur.
+
+** User actions
+     Alter
+       [dbo].[Igrac] (Table)
+
+** Supporting actions
+
+The type for column transferi in table [dbo].[Igrac] is currently  VARCHAR (1) NULL but is being changed to  INT NULL. Data loss could occur.
+

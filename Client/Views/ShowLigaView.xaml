@@ -1,0 +1,28 @@
+﻿<UserControl x:Class="Client.Views.ShowLigaView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Client.Views"
+             xmlns:data ="clr-namespace:Client.Model"
+             xmlns:viewmodel ="clr-namespace:Client.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="800">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="../Pictures/PocetnaLiga.jpg"></ImageBrush>
+        </Grid.Background>
+        <DataGrid ItemsSource="{Binding lige}" Style="{StaticResource DataGridStyle}" IsReadOnly="True" AlternatingRowBackground="Gainsboro" SelectionMode="Single" SelectedValue="{Binding Selektovana_liga, Mode=TwoWay}" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="199" Margin="10,85,0,0" VerticalAlignment="Top" Width="780">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding L.id_lige}" Width="60" />
+                <DataGridTextColumn Header="Naziv Lige" Binding="{Binding L.naziv_lige}" Width="*" />
+                <DataGridTextColumn Header="Drzava Lige" Binding="{Binding L.drzava_lige}" Width="*" />
+                <DataGridTextColumn Header="Ukupno klubova" Binding="{Binding L.broj_klubova}" Width="*" />
+                <DataGridTextColumn Header="Prosecna vrednost klubova ($)" Binding="{Binding Prosecna_Vrednost_Klubova}" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Obrisi ligu"  Style="{StaticResource RoundButton}" Visibility="{Binding Visibility}" Command="{Binding DeleteCommand}" IsEnabled="{Binding CanDelete}" HorizontalAlignment="Left" Height="50" Margin="23,328,0,0" VerticalAlignment="Top" Width="142"/>
+        <!--<Button Content="Prikazi trenere sa klubom" Command="{Binding PrikaziCommand}"  HorizontalAlignment="Left" Height="50" Margin="588,358,0,0" VerticalAlignment="Top" Width="142"/>-->
+        <Button Content="Stampaj lige" Command="{Binding IspisCommand}"  Style="{StaticResource RoundButton}" HorizontalAlignment="Left" Height="50" Margin="626,328,0,0" VerticalAlignment="Top" Width="142"/>
+    </Grid>
+</UserControl>

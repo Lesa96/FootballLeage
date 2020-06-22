@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="Client.Views.UpdateVlasnikView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Client.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <DataGrid ItemsSource="{Binding Vlasnici}" Style="{StaticResource DataGridStyle}" IsReadOnly="True" AlternatingRowBackground="Gainsboro" SelectionMode="Single" SelectedValue="{Binding Selektovani_vlasnik, Mode=TwoWay}" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="199" Margin="10,85,0,0" VerticalAlignment="Top" Width="780">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding V.id_vlasnika}" Width="60" />
+                <DataGridTextColumn Header="Ime Vlasnika" Binding="{Binding V.ime_vlasnika}" Width="*" />
+                <DataGridTextColumn Header="Prezime Vlasnika" Binding="{Binding V.prezime_vlasnika}" Width="*" />
+                <DataGridTextColumn Header="Drzava Vlasnika" Binding="{Binding V.drzava}" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="224,319,0,0" TextWrapping="Wrap" Text="{Binding Selektovani_vlasnik.V.ime_vlasnika}" VerticalAlignment="Top" Width="160"/>
+        <Label Content="Ime Vlasnika" Background="AliceBlue" HorizontalAlignment="Left" Height="25" Margin="224,289,0,0" VerticalAlignment="Top" Width="85"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="410,319,0,0" TextWrapping="Wrap" Text="{Binding Selektovani_vlasnik.V.prezime_vlasnika}" VerticalAlignment="Top" Width="160"/>
+        <Label Background="AliceBlue" Content="Prezime Vlasnika" HorizontalAlignment="Left" Height="25" Margin="410,289,0,0" VerticalAlignment="Top" Width="104"/>
+        <ComboBox ItemsSource="{Binding Drzave, Mode=TwoWay}" Cursor="Hand" SelectedItem="{Binding Selektovani_vlasnik.V.drzava , Mode=TwoWay}" HorizontalAlignment="Left" Height="24" Margin="224,374,0,0" VerticalAlignment="Top" Width="140"/>
+        <Label Content="Drzava vlasnika" Background="AliceBlue" HorizontalAlignment="Left" Height="25" Margin="224,344,0,0" VerticalAlignment="Top" Width="95"/>
+
+        <Label Content="Klubovi ciji je vlasnik:" Background="AliceBlue" HorizontalAlignment="Left" Margin="598,289,0,0" VerticalAlignment="Top"/>
+        <ListBox ItemsSource="{Binding Klubovi, Mode=TwoWay}"  Background="White" HorizontalAlignment="Left" Height="78" Margin="598,320,0,0" VerticalAlignment="Top" Width="153">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <CheckBox IsChecked="{Binding IsSelected, Mode=TwoWay}" />
+                        <TextBlock Text="{Binding K.naziv, Mode=TwoWay}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <Button Content="Promeni Vlasnika"  Style="{StaticResource RoundButton}" Command="{Binding UpdateCommand}" IsEnabled="{Binding CanUpdate}" HorizontalAlignment="Left" Height="50" Margin="23,328,0,0" VerticalAlignment="Top" Width="142"/>
+
+    </Grid>
+</UserControl>

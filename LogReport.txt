@@ -1,0 +1,106 @@
+KREIRANJE 5/11/2020 	 STADION:    ID: 5 ,Naziv: Marakana, Grad: Beograd, Kapacitet: 35000 
+
+KREIRANJE 5/11/2020 	 SUDIJA:    ID: 7, Ime: John , Prezime: Shen , Drzava: United States
+
+KREIRANJE 5/11/2020 	 VLASNIK:    ID: 5 , Ime: gore , Prezime: wefwer , Drzava: American Samoa
+
+BRISANJE 5/11/2020 	 VLASNIK:    ID: 5 , Ime: gore , Prezime: wefwer , Drzava: American Samoa
+
+KREIRANJE 5/14/2020 	 KLUB:    Naziv: Crvena Zvezda , Grad: Beograd 
+
+KREIRANJE 5/14/2020 	 IGRAC:    ID: 8 , Ime: Stefan  , Prezime: Cukic
+
+KREIRANJE 5/14/2020 	 IGRAC:    ID: 9 , Ime: Cristiano  , Prezime: Ronaldo
+
+KREIRANJE 5/14/2020 	 IGRAC:    ID: 10 , Ime: Mohamed  , Prezime: Salah
+
+KREIRANJE 5/14/2020 	 IGRAC:    ID: 11 , Ime: Robert  , Prezime: Lewandovski
+
+KREIRANJE 5/15/2020 	 KLUB:    Naziv: Partizan , Grad: Beograd 
+
+BRISANJE 5/15/2020 	 MENADZER:    ID: 1 , Ime: Riola , Prezime: Riola , Drzava: Armenia
+
+BRISANJE 5/15/2020 	 MENADZER:    ID: 2 , Ime: Svima , Prezime: Menadzer , Drzava: Barbados
+
+BRISANJE 5/15/2020 	 MENADZER:    ID: 3 , Ime: Menadzer , Prezime: Cukic , Drzava: Indonesia
+
+BRISANJE 5/15/2020 	 IGRAC:    ID: 1 , Ime: Romelu  , Prezime: Lukaku
+
+BRISANJE 5/15/2020 	 IGRAC:    ID: 2 , Ime: Lautaro  , Prezime: Martinez
+
+BRISANJE 5/15/2020 	 IGRAC:    ID: 3 , Ime: Gigi  , Prezime: Donaruma
+
+BRISANJE 5/15/2020 	 IGRAC:    ID: 4 , Ime: Marcelo  , Prezime: Brozovic
+
+BRISANJE 5/15/2020 	 IGRAC:    ID: 5 , Ime: Sasa  , Prezime: Dragomirovic
+
+BRISANJE 5/15/2020 	 IGRAC:    ID: 6 , Ime: Gonzalo  , Prezime: Higuain
+
+BRISANJE 5/15/2020 	 IGRAC:    ID: 11 , Ime: Robert  , Prezime: Lewandovski
+
+BRISANJE 5/15/2020 	 IGRAC:    ID: 10 , Ime: Mohamed  , Prezime: Salah
+
+BRISANJE 5/15/2020 	 IGRAC:    ID: 7 , Ime: Nicolo  , Prezime: Barella
+
+BRISANJE 5/15/2020 	 IGRAC:    ID: 8 , Ime: Stefan  , Prezime: Cukic
+
+BRISANJE 5/15/2020 	 IGRAC:    ID: 9 , Ime: Cristiano  , Prezime: Ronaldo
+
+KREIRANJE 5/15/2020 	 IGRAC:    ID: 1 , Ime: Lautaro  , Prezime: Martinez
+
+KREIRANJE 5/15/2020 	 IGRAC:    ID: 2 , Ime: Romelu  , Prezime: Lukaku
+
+KREIRANJE 5/15/2020 	 IGRAC:    ID: 3 , Ime: Cristiano  , Prezime: Ronaldo
+
+BRISANJE 5/15/2020 	 IGRAC:    ID: 3 , Ime: Cristiano  , Prezime: Ronaldo
+
+KREIRANJE 5/15/2020 	 IGRAC:    ID: 3 , Ime: Robert  , Prezime: Lewandowski
+
+KREIRANJE 5/15/2020 	 IGRAC:    ID: 4 , Ime: Cristiano  , Prezime: Ronaldo
+
+KREIRANJE 5/15/2020 	 IGRAC:    ID: 5 , Ime: Andrea  , Prezime: Silva
+
+KREIRANJE 5/15/2020 	 IGRAC:    ID: 6 , Ime: Stefan  , Prezime: Djurdjevic
+
+KREIRANJE 5/15/2020 	 MENADZER:    ID: 1 , Ime: Mino , Prezime: Riola , Drzava: Belgium
+
+BRISANJE 5/24/2020 	 RADNIK:    ID: 3, Ime: Lazar , Prezime: Polic , Drzava: India
+
+BRISANJE 5/24/2020 	 VLASNIK:    ID: 3 , Ime: Neki Lopov , Prezime: Veliki lopov , Drzava: Tunisia
+
+BRISANJE 5/24/2020 	 NAVIJAC:    ID: 3, Ime: Lazar , Prezime: Polic , Drzava: Pakistan
+
+BRISANJE 5/24/2020 	 KLUB:    Naziv: lopovi,Grad: Torino 
+
+BRISANJE 5/24/2020 	 IGRAC:    ID: 4 , Ime: Cristiano  , Prezime: Ronaldo
+
+KREIRANJE 5/24/2020 	 KLUB:    Naziv: Juventus , Grad: Torino 
+
+KREIRANJE 5/24/2020 	 IGRAC:    ID: 4 , Ime: Cristiano  , Prezime: Ronaldo
+
+KREIRANJE 5/24/2020 	 NAVIJAC:    ID: 3, Ime: Dragan , Prezime: Kucic , Drzava: Austria
+
+KREIRANJE 5/24/2020 	 IGRAC:    ID: 7 , Ime: Mohamed  , Prezime: Salah
+
+KREIRANJE 5/24/2020 	 IGRAC:    ID: 8 , Ime: Sadio  , Prezime: Mane
+
+KREIRANJE 5/24/2020 	 IGRAC:    ID: 9 , Ime: Sasa  , Prezime: Tomic
+
+KREIRANJE 5/24/2020 	 IGRAC:    ID: 10 , Ime: Stefan  , Prezime: Radic
+
+KREIRANJE 5/24/2020 	 IGRAC:    ID: 11 , Ime: Mirko  , Prezime: Katalic
+
+KREIRANJE 5/24/2020 	 IGRAC:    ID: 12 , Ime: Stevan  , Prezime: Mihajlovic
+
+KREIRANJE 5/25/2020 	 TRENER:    ID: 6, Ime: Slaven , Prezime: Brkic , Drzava: Mexico 
+
+KREIRANJE 5/25/2020 	 TRENER:    ID: 7, Ime: Jurgen , Prezime: Klop , Drzava: Germany 
+
+KREIRANJE 5/25/2020 	 TRENER:    ID: 8, Ime: Mauricio , Prezime: Sarri , Drzava: Italy 
+
+KREIRANJE 5/26/2020 	 IGRAC:    ID: 13 , Ime: Karin  , Prezime: Benzema
+
+KREIRANJE 6/7/2020 	 IGRAC:    ID: 14 , Ime: Sandro  , Prezime: Tonali
+
+BRISANJE 6/7/2020 	                     KORISNIK:    ID: 4, Korisnicko ime: Dragan19g 
+

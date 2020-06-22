@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="Client.Views.UpdateStadionView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Client.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <DataGrid ItemsSource="{Binding Stadioni}" Style="{StaticResource DataGridStyle}" IsReadOnly="True" AlternatingRowBackground="Gainsboro" SelectionMode="Single" SelectedValue="{Binding Selektovani_stadion, Mode=TwoWay}" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="199" Margin="10,85,0,0" VerticalAlignment="Top" Width="780">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding S.id_stadiona}" Width="60" />
+                <DataGridTextColumn Header="Naziv Stadiona" Binding="{Binding S.naziv_stadiona}" Width="*" />
+                <DataGridTextColumn Header="Grad Stadiona" Binding="{Binding S.grad}" Width="*" />
+                <DataGridTextColumn Header="Kapacitet Stadiona" Binding="{Binding S.kapacitet}" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="224,319,0,0" TextWrapping="Wrap" Text="{Binding Selektovani_stadion.S.naziv_stadiona}" VerticalAlignment="Top" Width="160"/>
+        <Label Content="Naziv stadiona" Background="AliceBlue" HorizontalAlignment="Left" Height="25" Margin="224,289,0,0" VerticalAlignment="Top" Width="91"/>
+        <Label Content="Grad stadiona:" Background="AliceBlue" HorizontalAlignment="Left" Margin="406,289,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Drzava_textbox" Text="{Binding Selektovani_stadion.S.grad , Mode=TwoWay}" HorizontalAlignment="Left" Height="21" Margin="406,319,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="160"/>
+        <Label Content="Kapacitet stadiona (broj sedista) :" Background="AliceBlue" HorizontalAlignment="Left" Margin="224,352,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Kapacitet_textbox" Text="{Binding Kapacitet , Mode=TwoWay}" HorizontalAlignment="Left" Height="21" Margin="224,383,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="160"/>
+
+        <Label Content="Klubovi koji igraju na stadionu:" Background="AliceBlue" HorizontalAlignment="Left" Margin="599,289,0,0" VerticalAlignment="Top"/>
+        <ListBox ItemsSource="{Binding Klubovi, Mode=TwoWay}"  Background="White" HorizontalAlignment="Left" Height="76" Margin="599,319,0,0" VerticalAlignment="Top" Width="153">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <CheckBox IsChecked="{Binding IsSelected, Mode=TwoWay}" />
+                        <TextBlock Text="{Binding K.naziv, Mode=TwoWay}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <Button Content="Promeni Stadion"  Style="{StaticResource RoundButton}" Command="{Binding UpdateCommand}" IsEnabled="{Binding CanUpdate}" HorizontalAlignment="Left" Height="50" Margin="23,328,0,0" VerticalAlignment="Top" Width="142"/>
+
+    </Grid>
+</UserControl>

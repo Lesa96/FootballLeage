@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="Client.Views.ShowSudijaView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Client.Views"
+             xmlns:data ="clr-namespace:Client.Model"
+             xmlns:viewmodel ="clr-namespace:Client.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="../Pictures/PocetnaLiga.jpg"></ImageBrush>
+        </Grid.Background>
+        <DataGrid ItemsSource="{Binding sudije}" Style="{StaticResource DataGridStyle}" IsReadOnly="True" AlternatingRowBackground="Gainsboro" SelectionMode="Single" SelectedValue="{Binding Selektovani_sudija, Mode=TwoWay}" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="199" Margin="10,85,0,0" VerticalAlignment="Top" Width="780">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding id_sudije}" Width="60" />
+                <DataGridTextColumn Header="Ime" Binding="{Binding ime_sudije}" Width="*" />
+                <DataGridTextColumn Header="Prezime" Binding="{Binding prezime_sudije}" Width="*" />
+                <DataGridTextColumn Header="Drzava" Binding="{Binding nacionalnost_sudije}" Width="*" />
+                <DataGridTextColumn Header="Liga" Binding="{Binding Liga.naziv_lige}" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Obrisi sudiju"  Style="{StaticResource RoundButton}" Visibility="{Binding Visibility}" Command="{Binding DeleteCommand}" IsEnabled="{Binding CanDelete}" HorizontalAlignment="Left" Height="50" Margin="23,328,0,0" VerticalAlignment="Top" Width="142"/>
+        <Button Content="Stampaj sudije" Command="{Binding IspisCommand}"  Style="{StaticResource RoundButton}" HorizontalAlignment="Left" Height="50" Margin="626,328,0,0" VerticalAlignment="Top" Width="142"/>
+    </Grid>
+</UserControl>

@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="Client.Views.IgracView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Client.Views"
+             xmlns:data ="clr-namespace:Client.Model"
+             xmlns:views="clr-namespace:Client.Views"
+             xmlns:viewModels="clr-namespace:Client.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <DataTemplate DataType="{x:Type viewModels:AddIgracViewModel}">
+            <views:AddIgracView></views:AddIgracView>
+
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:ShowIgracViewModel}">
+            <views:ShowIgracView></views:ShowIgracView>
+
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewModels:UpdateIgracViewModel}">
+            <views:UpdateIgracView></views:UpdateIgracView>
+
+        </DataTemplate>
+    </UserControl.Resources>
+    
+    <Grid>
+        <DockPanel>
+            <Menu DockPanel.Dock="Top">
+                <MenuItem x:Name="Show" Header="Prikazi Igrace" Command="{Binding NavCommand}"
+                          CommandParameter="myShow" Background="Gainsboro"
+                          Width="108" Click="ChangeMenu_Click"
+                          BorderBrush="Black" Cursor="Hand"
+                          Height="30"/>
+                <MenuItem x:Name="Add" Header="Dodaj Igraca" Visibility="{Binding Visibility}" Command="{Binding NavCommand}"
+                          CommandParameter="myAdd"
+                          Width="108" Click="ChangeMenu_Click"
+                          BorderBrush="Black" Cursor="Hand"
+                          Height="30"/>
+                <MenuItem x:Name="Update" Header="Promeni Igraca" Visibility="{Binding Visibility}" Command="{Binding NavCommand}"
+                          CommandParameter="myUpdate"
+                          Width="108" Click="ChangeMenu_Click"
+                          BorderBrush="Black" Cursor="Hand"
+                          Height="30"/>
+
+            </Menu>
+        </DockPanel>
+        <Grid Margin="0,33,0,0">
+            <Grid.Background>
+                <ImageBrush ImageSource="../Pictures/PocetnaLiga.jpg"></ImageBrush>
+            </Grid.Background>
+            <ContentControl Content="{Binding CurrentViewModel}"/>
+        </Grid>
+        
+    </Grid>
+</UserControl>

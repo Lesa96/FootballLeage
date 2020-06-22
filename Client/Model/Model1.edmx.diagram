@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bc1557c7d61845d8a458387db82ba54e" Name="Diagram1" ZoomLevel="89">
+        <EntityTypeShape EntityType="BazaZaLiguModel.Igrac" Width="1.5" PointX="5.25" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BazaZaLiguModel.Klub" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BazaZaLiguModel.Liga" Width="1.5" PointX="0.75" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BazaZaLiguModel.Menadzer" Width="1.5" PointX="7.5" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BazaZaLiguModel.Navijac" Width="1.5" PointX="5.25" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BazaZaLiguModel.Obezbedjenje" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BazaZaLiguModel.Poseduje" Width="1.5" PointX="8.25" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BazaZaLiguModel.Sponzor" Width="1.5" PointX="3" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BazaZaLiguModel.Stadion" Width="1.5" PointX="6" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BazaZaLiguModel.Sudija" Width="1.5" PointX="3" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BazaZaLiguModel.Trener" Width="1.5" PointX="6" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BazaZaLiguModel.Vlasnik" Width="1.5" PointX="5.25" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="BazaZaLiguModel.Vodi" Width="1.5" PointX="8.25" PointY="5.875" IsExpanded="true" />
+        <AssociationConnector Association="BazaZaLiguModel.igrac_klub_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="BazaZaLiguModel.igrac_vodi_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="BazaZaLiguModel.klub_liga_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="BazaZaLiguModel.poseduje_klub_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="BazaZaLiguModel.vodi_klub_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="BazaZaLiguModel.sudija_liga_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="BazaZaLiguModel.poseduje_stadion_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="BazaZaLiguModel.vodi_trener_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="BazaZaLiguModel.Ima" ManuallyRouted="false" />
+        <AssociationConnector Association="BazaZaLiguModel.Navija" ManuallyRouted="false" />
+        <AssociationConnector Association="BazaZaLiguModel.Pripada" ManuallyRouted="false" />
+        <AssociationConnector Association="BazaZaLiguModel.Sponzorise" ManuallyRouted="false" />
+        <AssociationConnector Association="BazaZaLiguModel.Zaposljava" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="BazaZaLiguModel.LogUser" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="BazaZaLiguModel.transferistorija" Width="1.5" PointX="7.5" PointY="15.125" />
+        <AssociationConnector Association="BazaZaLiguModel.transferistorija_igrac_fk" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

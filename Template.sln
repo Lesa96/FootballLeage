@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2008
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Template", "Template\Template.sqlproj", "{7FFA0B0C-223A-4F5B-83A4-BBB9FFEB130F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{9EBE6FE1-67E4-4D62-8634-6A346FBD3861}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7FFA0B0C-223A-4F5B-83A4-BBB9FFEB130F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FFA0B0C-223A-4F5B-83A4-BBB9FFEB130F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FFA0B0C-223A-4F5B-83A4-BBB9FFEB130F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{7FFA0B0C-223A-4F5B-83A4-BBB9FFEB130F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FFA0B0C-223A-4F5B-83A4-BBB9FFEB130F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FFA0B0C-223A-4F5B-83A4-BBB9FFEB130F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{9EBE6FE1-67E4-4D62-8634-6A346FBD3861}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EBE6FE1-67E4-4D62-8634-6A346FBD3861}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EBE6FE1-67E4-4D62-8634-6A346FBD3861}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EBE6FE1-67E4-4D62-8634-6A346FBD3861}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F0FE475C-1969-4F3C-9B28-F86F76C94976}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="Client.Views.ShowIgracView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Client.Views"
+             xmlns:data ="clr-namespace:Client.Model"
+             xmlns:viewmodel ="clr-namespace:Client.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="../Pictures/PocetnaLiga.jpg"></ImageBrush>
+        </Grid.Background>
+        <DataGrid ItemsSource="{Binding igraci}" Style="{StaticResource DataGridStyle}" IsReadOnly="True" SelectionMode="Single" AlternatingRowBackground="Gainsboro" SelectedValue="{Binding Selektovani_igrac, Mode=TwoWay}" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="199" Margin="10,85,0,0" VerticalAlignment="Top" Width="780">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding igrac.id_igraca}" Width="60" />
+                <DataGridTextColumn Header="Ime igraca" Binding="{Binding igrac.ime_igraca}" Width="*" />
+                <DataGridTextColumn Header="Prezime igraca" Binding="{Binding igrac.prezime_igraca}" Width="*" />
+                <DataGridTextColumn Header="Klub igraca" Binding="{Binding igrac.naziv_kluba}" Width="*" />
+                <DataGridTextColumn Header="Broj utakmica" Binding="{Binding igrac.odigranih_utakmica}" Width="*" />
+                <DataGridTextColumn Header="Datih golova" Binding="{Binding igrac.postignutih_golova}" Width="*" />
+                <DataGridTextColumn Header="Prosek golova" Binding="{Binding igrac.prosek_golova}" Width="*" />
+                <DataGridTextColumn Header="Godine igraca" Binding="{Binding igrac.godine_igraca}" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Transfer istorija:" Background="AliceBlue" HorizontalAlignment="Left" Margin="331,297,0,0" VerticalAlignment="Top"/>
+        <ListBox ItemsSource="{Binding Selektovani_igrac.Transferi, Mode=TwoWay}"  Background="White" HorizontalAlignment="Left" Height="76" Margin="331,328,0,0" VerticalAlignment="Top" Width="153" />
+
+        <Button Content="Obrisi Igraca" Style="{StaticResource RoundButton}" Visibility="{Binding Visibility}" Command="{Binding DeleteCommand}" IsEnabled="{Binding CanDelete}" HorizontalAlignment="Left" Height="50" Margin="23,328,0,0" VerticalAlignment="Top" Width="142"/>
+        <Button Content="Stampaj igrace" Command="{Binding IspisCommand}"  Style="{StaticResource RoundButton}" HorizontalAlignment="Left" Height="50" Margin="626,328,0,0" VerticalAlignment="Top" Width="142"/>
+    </Grid>
+</UserControl>

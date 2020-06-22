@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="Client.Views.UpdateIgracView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Client.Views"
+             xmlns:data ="clr-namespace:Client.Model"
+             xmlns:viewmodel ="clr-namespace:Client.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="../Pictures/PocetnaLiga.jpg"></ImageBrush>
+        </Grid.Background>
+        <DataGrid ItemsSource="{Binding igraci}" Style="{StaticResource DataGridStyle}" IsReadOnly="True" AlternatingRowBackground="Gainsboro" SelectionMode="Single" SelectedValue="{Binding Selektovani_igrac, Mode=TwoWay}" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="199" Margin="10,85,0,0" VerticalAlignment="Top" Width="780">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding igrac.id_igraca}" Width="60" />
+                <DataGridTextColumn Header="Ime " Binding="{Binding igrac.ime_igraca}" Width="*" />
+                <DataGridTextColumn Header="Prezime " Binding="{Binding igrac.prezime_igraca}" Width="*" />
+                <DataGridTextColumn Header="Klub " Binding="{Binding igrac.naziv_kluba}" Width="*" />
+                <DataGridTextColumn Header="Odigranih utakmica" Binding="{Binding igrac.odigranih_utakmica}" Width="*" />
+                <DataGridTextColumn Header="Postignutih golova" Binding="{Binding igrac.postignutih_golova}" Width="*" />
+                <DataGridTextColumn Header="Godine igraca" Binding="{Binding igrac.godine_igraca}" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="230,319,0,0" TextWrapping="Wrap" Text="{Binding Selektovani_igrac.igrac.ime_igraca}" VerticalAlignment="Top" Width="160"/>
+        <Label Content="Ime Igraca" Background="AliceBlue" HorizontalAlignment="Left" Height="25" Margin="230,289,0,0" VerticalAlignment="Top" Width="67"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="434,319,0,0" TextWrapping="Wrap" Text="{Binding Selektovani_igrac.igrac.prezime_igraca}" VerticalAlignment="Top" Width="160"/>
+        <Label Content="Prezime Igraca" Background="AliceBlue" HorizontalAlignment="Left" Height="25" Margin="434,289,0,0" VerticalAlignment="Top" Width="89"/>
+        <Label Content="Odigranih utakmica" Background="AliceBlue" HorizontalAlignment="Left" Height="25" Margin="230,344,0,0" VerticalAlignment="Top" Width="116"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="230,374,0,0" TextWrapping="Wrap" Text="{Binding Utakmice}" VerticalAlignment="Top" Width="160"/>
+        <Label Content="Postignutih golova" Background="AliceBlue" HorizontalAlignment="Left" Height="25" Margin="434,344,0,0" VerticalAlignment="Top" Width="116"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="434,374,0,0" TextWrapping="Wrap" Text="{Binding Golovi}" VerticalAlignment="Top" Width="160"/>
+        <Label Content="Klub igraca" Background="AliceBlue" HorizontalAlignment="Left" Height="25" Margin="643,289,0,0" VerticalAlignment="Top" Width="71"/>
+        <ComboBox ItemsSource="{Binding Naziv_Klubova, Mode=TwoWay}" Cursor="Hand" SelectedItem="{Binding Selektovani_igrac.igrac.naziv_kluba , Mode=TwoWay}" HorizontalAlignment="Left" Height="20" Margin="643,319,0,0" VerticalAlignment="Top" Width="140"/>
+        <Label Content="Godine igraca" Background="AliceBlue" HorizontalAlignment="Left" Height="25" Margin="643,344,0,0" VerticalAlignment="Top" Width="87"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="643,374,0,0" TextWrapping="Wrap" Text="{Binding Godine, Mode=TwoWay}" VerticalAlignment="Top" Width="140"/>
+
+        <Button Content="Promeni Igraca"  Style="{StaticResource RoundButton}" Command="{Binding UpdateCommand}" IsEnabled="{Binding CanUpdate}" HorizontalAlignment="Left" Height="50" Margin="23,328,0,0" VerticalAlignment="Top" Width="142"/>
+
+
+    </Grid>
+</UserControl>

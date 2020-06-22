@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LigaDBModelStoreContainer" CdmEntityContainer="LigaDBEntities">
+    <EntitySetMapping Name="Igracs">
+      <EntityTypeMapping TypeName="LigaDBModel.Igrac">
+        <MappingFragment StoreEntitySet="Igrac">
+          <ScalarProperty Name="id_igraca" ColumnName="id_igraca" />
+          <ScalarProperty Name="ime_igraca" ColumnName="ime_igraca" />
+          <ScalarProperty Name="prezime_igraca" ColumnName="prezime_igraca" />
+          <ScalarProperty Name="vodi_id_trenera" ColumnName="vodi_id_trenera" />
+          <ScalarProperty Name="vodi_naziv" ColumnName="vodi_naziv" />
+          <ScalarProperty Name="naziv_kluba" ColumnName="naziv_kluba" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Klubs">
+      <EntityTypeMapping TypeName="LigaDBModel.Klub">
+        <MappingFragment StoreEntitySet="Klub">
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="grad" ColumnName="grad" />
+          <ScalarProperty Name="liga_id_lige" ColumnName="liga_id_lige" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ligas">
+      <EntityTypeMapping TypeName="LigaDBModel.Liga">
+        <MappingFragment StoreEntitySet="Liga">
+          <ScalarProperty Name="id_lige" ColumnName="id_lige" />
+          <ScalarProperty Name="naziv_lige" ColumnName="naziv_lige" />
+          <ScalarProperty Name="drzava_lige" ColumnName="drzava_lige" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Menadzers">
+      <EntityTypeMapping TypeName="LigaDBModel.Menadzer">
+        <MappingFragment StoreEntitySet="Menadzer">
+          <ScalarProperty Name="ime_menagera" ColumnName="ime_menagera" />
+          <ScalarProperty Name="prezime_menagera" ColumnName="prezime_menagera" />
+          <ScalarProperty Name="id_menagera" ColumnName="id_menagera" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Obezbedjenjes">
+      <EntityTypeMapping TypeName="LigaDBModel.Obezbedjenje">
+        <MappingFragment StoreEntitySet="Obezbedjenje">
+          <ScalarProperty Name="ime_radnika" ColumnName="ime_radnika" />
+          <ScalarProperty Name="prezime_radnika" ColumnName="prezime_radnika" />
+          <ScalarProperty Name="id_radnika" ColumnName="id_radnika" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Posedujes">
+      <EntityTypeMapping TypeName="LigaDBModel.Poseduje">
+        <MappingFragment StoreEntitySet="Poseduje">
+          <ScalarProperty Name="klub_naziv" ColumnName="klub_naziv" />
+          <ScalarProperty Name="stadion_id_stadiona" ColumnName="stadion_id_stadiona" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sponzors">
+      <EntityTypeMapping TypeName="LigaDBModel.Sponzor">
+        <MappingFragment StoreEntitySet="Sponzor">
+          <ScalarProperty Name="id_sponzora" ColumnName="id_sponzora" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stadions">
+      <EntityTypeMapping TypeName="LigaDBModel.Stadion">
+        <MappingFragment StoreEntitySet="Stadion">
+          <ScalarProperty Name="naziv_stadiona" ColumnName="naziv_stadiona" />
+          <ScalarProperty Name="id_stadiona" ColumnName="id_stadiona" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sudijas">
+      <EntityTypeMapping TypeName="LigaDBModel.Sudija">
+        <MappingFragment StoreEntitySet="Sudija">
+          <ScalarProperty Name="ime_sudije" ColumnName="ime_sudije" />
+          <ScalarProperty Name="prezime_sudije" ColumnName="prezime_sudije" />
+          <ScalarProperty Name="id_sudije" ColumnName="id_sudije" />
+          <ScalarProperty Name="nacionalnost_sudije" ColumnName="nacionalnost_sudije" />
+          <ScalarProperty Name="liga_id_lige" ColumnName="liga_id_lige" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Treners">
+      <EntityTypeMapping TypeName="LigaDBModel.Trener">
+        <MappingFragment StoreEntitySet="Trener">
+          <ScalarProperty Name="ime_trenera" ColumnName="ime_trenera" />
+          <ScalarProperty Name="prezime_trenera" ColumnName="prezime_trenera" />
+          <ScalarProperty Name="id_trenera" ColumnName="id_trenera" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vlasniks">
+      <EntityTypeMapping TypeName="LigaDBModel.Vlasnik">
+        <MappingFragment StoreEntitySet="Vlasnik">
+          <ScalarProperty Name="ime_vlasnika" ColumnName="ime_vlasnika" />
+          <ScalarProperty Name="prezime_vlasnika" ColumnName="prezime_vlasnika" />
+          <ScalarProperty Name="id_vlasnika" ColumnName="id_vlasnika" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vodis">
+      <EntityTypeMapping TypeName="LigaDBModel.Vodi">
+        <MappingFragment StoreEntitySet="Vodi">
+          <ScalarProperty Name="trener_id_trenera" ColumnName="trener_id_trenera" />
+          <ScalarProperty Name="klub_naziv" ColumnName="klub_naziv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Ima" TypeName="LigaDBModel.Ima" StoreEntitySet="Ima">
+      <EndProperty Name="Igrac">
+        <ScalarProperty Name="id_igraca" ColumnName="igrac_id_igraca" />
+      </EndProperty>
+      <EndProperty Name="Menadzer">
+        <ScalarProperty Name="id_menagera" ColumnName="menadzer_id_menagera" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Pripada" TypeName="LigaDBModel.Pripada" StoreEntitySet="Pripada">
+      <EndProperty Name="Klub">
+        <ScalarProperty Name="naziv" ColumnName="klub_naziv" />
+      </EndProperty>
+      <EndProperty Name="Vlasnik">
+        <ScalarProperty Name="id_vlasnika" ColumnName="vlasnik_id_vlasnika" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Sponzorise" TypeName="LigaDBModel.Sponzorise" StoreEntitySet="Sponzorise">
+      <EndProperty Name="Liga">
+        <ScalarProperty Name="id_lige" ColumnName="liga_id_lige" />
+      </EndProperty>
+      <EndProperty Name="Sponzor">
+        <ScalarProperty Name="id_sponzora" ColumnName="sponzor_id_sponzora" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Zaposljava" TypeName="LigaDBModel.Zaposljava" StoreEntitySet="Zaposljava">
+      <EndProperty Name="Obezbedjenje">
+        <ScalarProperty Name="id_radnika" ColumnName="obezbedjenje_id_radnika" />
+      </EndProperty>
+      <EndProperty Name="Poseduje">
+        <ScalarProperty Name="klub_naziv" ColumnName="poseduje_klub_naziv" />
+        <ScalarProperty Name="stadion_id_stadiona" ColumnName="poseduje_stadion_id_stadiona" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

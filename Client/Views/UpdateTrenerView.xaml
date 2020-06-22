@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="Client.Views.UpdateTrenerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Client.Views"
+             xmlns:data ="clr-namespace:Client.Model"
+             xmlns:viewmodel ="clr-namespace:Client.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="../Pictures/PocetnaLiga.jpg"></ImageBrush>
+        </Grid.Background>
+        <DataGrid ItemsSource="{Binding treneri}" Style="{StaticResource DataGridStyle}" IsReadOnly="True" AlternatingRowBackground="Gainsboro" SelectionMode="Single" SelectedValue="{Binding Selektovani_trener, Mode=TwoWay}" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="199" Margin="10,85,0,0" VerticalAlignment="Top" Width="780">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding T.id_trenera}" Width="60" />
+                <DataGridTextColumn Header="Ime trenera" Binding="{Binding T.ime_trenera}" Width="*" />
+                <DataGridTextColumn Header="Prezime trenera" Binding="{Binding T.prezime_trenera}" Width="*" />
+                <DataGridTextColumn Header="Drzava trenera" Binding="{Binding T.drzava}" Width="*" />
+                <DataGridTextColumn Header="Klub trenera" Binding="{Binding Naziv_Kluba}" Width="*" />
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="311,330,0,0" TextWrapping="Wrap" Text="{Binding Selektovani_trener.T.ime_trenera}"  VerticalAlignment="Top" Width="160"/>
+        <Label Content="Ime Trenera" Background="AliceBlue" HorizontalAlignment="Left" Height="25" Margin="311,300,0,0" VerticalAlignment="Top" Width="72"/>
+        <TextBox HorizontalAlignment="Left" Height="20" Margin="515,330,0,0" TextWrapping="Wrap" Text="{Binding Selektovani_trener.T.prezime_trenera}" VerticalAlignment="Top" Width="160"/>
+        <Label Content="Prezime Trenera" Background="AliceBlue" HorizontalAlignment="Left" Height="25" Margin="515,300,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label Content="Klub" Background="AliceBlue" HorizontalAlignment="Left" Height="25" Margin="311,355,0,0" VerticalAlignment="Top" Width="37"/>
+        <ComboBox ItemsSource="{Binding Naziv_Klubova, Mode=TwoWay}" Cursor="Hand" SelectedItem="{Binding Selektovani_trener.Naziv_Kluba , Mode=TwoWay}" HorizontalAlignment="Left" Height="24" Margin="311,385,0,0" VerticalAlignment="Top" Width="140"/>
+        <ComboBox ItemsSource="{Binding Drzave, Mode=TwoWay}" Cursor="Hand" SelectedItem="{Binding Selektovani_trener.T.drzava , Mode=TwoWay}" HorizontalAlignment="Left" Height="24" Margin="515,385,0,0" VerticalAlignment="Top" Width="140"/>
+        <Label Content="Drzava trenera" Background="AliceBlue" HorizontalAlignment="Left" Height="25" Margin="515,355,0,0" VerticalAlignment="Top" Width="100"/>
+
+        <Button Content="Promeni Trenera"  Style="{StaticResource RoundButton}" Command="{Binding UpdateCommand}" IsEnabled="{Binding CanUpdate}" HorizontalAlignment="Left" Height="50" Margin="23,328,0,0" VerticalAlignment="Top" Width="142"/>
+    </Grid>
+</UserControl>

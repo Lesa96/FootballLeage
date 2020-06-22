@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="Client.Views.AddTrenerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Client.Views"
+             xmlns:data ="clr-namespace:Client.Model"
+             xmlns:viewmodel ="clr-namespace:Client.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="../Pictures/PocetnaLiga.jpg"></ImageBrush>
+        </Grid.Background>
+        <Label Content="Ime Trenera:" Background="AliceBlue" HorizontalAlignment="Left" Margin="23,47,0,0" VerticalAlignment="Top"/>
+        <Label Content="Prezime Trenera:" Background="AliceBlue" HorizontalAlignment="Left" Margin="23,104,0,0" VerticalAlignment="Top"/>
+        <Label Content="Slobodni klubovi za treniranje (opciono):" Background="AliceBlue" HorizontalAlignment="Left" Margin="23,221,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Ime_textbox" Text="{Binding Trener_prop.ime_trenera , Mode=TwoWay}" HorizontalAlignment="Left" Height="21" Margin="23,78,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="140"/>
+        <TextBox x:Name="Prezime_textbox" Text="{Binding Trener_prop.prezime_trenera , Mode=TwoWay}" HorizontalAlignment="Left" Height="21" Margin="23,135,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="140"/>
+        <Label Content="Drzava Trenera:" Background="AliceBlue" HorizontalAlignment="Left" Margin="24,161,0,0" VerticalAlignment="Top"/>
+        <ComboBox ItemsSource="{Binding Drzave, Mode=TwoWay}" Cursor="Hand" SelectedItem="{Binding Trener_prop.drzava , Mode=TwoWay}" HorizontalAlignment="Left" Height="24" Margin="23,192,0,0" VerticalAlignment="Top" Width="140"/>
+
+        <ComboBox ItemsSource="{Binding Naziv_kluba, Mode=TwoWay}" Cursor="Hand" SelectedItem="{Binding SelektovaniKlub , Mode=TwoWay}" HorizontalAlignment="Left" Height="24" Margin="23,252,0,0" VerticalAlignment="Top" Width="140"/>
+
+        <Button Content="Dodaj Trenera"  Style="{StaticResource RoundButton}" Command="{Binding addCommand}" HorizontalAlignment="Left" Height="50" Margin="23,328,0,0" VerticalAlignment="Top" Width="142"/>
+    </Grid>
+</UserControl>

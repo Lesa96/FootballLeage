@@ -1,0 +1,19 @@
+							5/26/2020  Klubovi: 
+
+	 Naziv: 		 Grad: 		 Liga: 		 Trener: 		 Navijaci: 		 Vrednost: 		 Prosecna Starost Igraca:	
+	 Inter 		 Milano 		 Serie A		 Antonio Conte 	 5 		 600000000 		24.5
+
+	 Crvena Zvezda 	 Beograd 		 Super Liga	 Dejan Stankovic 	 1 		 15000000 		24.75
+
+	 Partizan 		 Beograd 		 Super Liga	  		 1 		 20000000 		26
+
+	 Milan 		 Milano 		 Serie A		 Luciano Spaleti 	 2 		 267000000 		27
+
+	 Liverpool 		 Liverpool 		 Premier Liga	 Jurgen Klop 	 1 		 750000000 		27.5
+
+	 Bayern Minhen 	 Minhen 		 Bundes Liga	 Cira Cira 		 2 		 700000000 		31
+
+	 Real Madrid 	 Madrid 		 Primera		  		 1 		 950000000 		32
+
+	 Juventus 		 Torino 		 Serie A		 Mauricio Sarri 	 1 		 700000000 		34
+
